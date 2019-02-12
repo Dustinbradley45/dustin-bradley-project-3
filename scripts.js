@@ -130,6 +130,7 @@ const eightiesSongs = [
 const questionLoop = () => {
     for (let i = 0; i < eightiesSongs.length; i++) {
         return songId = i;
+        
     }
 }
 
@@ -152,29 +153,27 @@ const userAnswer = function (i) {
 
         if ($(this).find('p')[0].innerHTML == eightiesSongs[i].artist) {
             $(this).css('background-color', 'green');
-            $('.nextRound').removeClass('hideMe');
+            $('.startGame').removeClass('hideMe');
+            $('.startGame').html(`<button class='nextRound'>Next Round</button>`)
 
         } else {
             $(this).css('background-color', 'red');
+             $('.startGame').removeClass('hideMe');
+             $('.startGame').html(`<button class='nextRound'>Next Round</button>`)
            
         }
     })
 };
 
 const gameReset = () => {
-   console.log( $('.answerBox1').remove('p')[0].innerHTML)
-    $('.answerBox2').empty();
-    $('.answerBox3').empty();
-    $('.answerBox4').empty();
-    console.log('text')
+    $('.answerBlock').children('p').remove();
+    
 }
 
 const nextRound = () => {
     $('.nextRound').on('click', function () { 
 
         gameReset();
-
-        questionLoop();
 
         appendQuestion(songId);
 
@@ -193,7 +192,7 @@ const gameInit = () => {
 
 const startQuestions = () => {
     $('.startGame').on('click', function () {
-        $(this).html('Next Round');
+        $(this).addClass('hideMe');
         $('.answerBlock').removeClass('hideMe').addClass('blockMe');
 
         appendQuestion(songId);

@@ -1,8 +1,10 @@
 .possibleAnswers > div {
     height: 100px;
-    width:400px;
-    background-color:#FAFAFA;
+    width:100%;
+    background-color:$secondaryFontColor;
     border: 1px solid black;
+    padding:20px;
+    margin: 20px;
 }
 
 .hideMe {

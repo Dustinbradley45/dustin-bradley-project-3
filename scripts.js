@@ -58,7 +58,7 @@ const gameVal = {
             artist: 'Grace Jones',
             album: 'Nightclubbin\'',
             year: 1981,
-            lyrics: 'Driving down those city streets / Waiting to get down / Won \'t you get your big machine / Somewhere in this town ?',
+            lyrics: 'Driving down those city streets / Waiting to get down / Won\'t you get your big machine / Somewhere in this town ?',
             otherAnswers: [
                 'The Smiths',
                 'Grace Jones',
@@ -120,84 +120,84 @@ const gameVal = {
         },
         song = {
             id: 10,
-            artist: 'Echo & the Bunnymen',
-            album: 'Ocean Rain',
-            year: 1984,
-            lyrics: 'Fate / Up against your will / Through the thick and thin /  He will wait until /  You give yourself to him ',
+            artist: 'The Clash',
+            album: 'Combat Rock',
+            year: 1982,
+            lyrics: 'Now the king told the boogie men / You have to / let that raga drop / The oil down the desert way / Has been shakin\' to the top',
             otherAnswers: [
                 'Madonna',
                 'Patti Smith',
                 'Echo & the Bunnymen',
-                'The Psychedelic Furs'
+                'The Clash'
             ]
         }
     ],
     ninetiesSongs: [
         song = {
             id: 1,
-            artist: '',
+            artist: 'No Doubt',
             album: '',
-            year: 199,
-            lyrics: '',
+            year: 1995,
+            lyrics: 'I\'m just a girl, guess I\'m some kind of freak, \'cause they all sit and stare with their eyes',
             otherAnswers: [
-                '',
-                '',
-                '',
-                '',
+                'Pearl Jam',
+                'Radiohead',
+                'Nirvana',
+                'Mariah Carey',
 
             ]
         },
         song = {
             id: 2,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'Beastie Boys',
+            album: 'Ill Communication',
+            year: 1994,
+            lyrics: 'Said, son, you\'d better listen / Stuck in your ass is an electrician',
             otherAnswers: [
-                '',
-                '',
-                '',
-                '',
+                'Ice Cube',
+                'Fatboy Slim',
+                'Beastie Boys',
+                'Cypress Hill',
 
             ]
 
         },
         song = {
             id: 3,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'R.E.M.',
+            album: 'Out of Time',
+            year: 1991,
+            lyrics: 'I thought that I heard you laughing /I thought that I heard you sing / I think thought I saw you try',
             otherAnswers: [
-                '',
-                '',
-                '',
-                '',
+                'R.E.M.',
+                'Janes Addiction',
+                'Oasis',
+                'Third Eye Blind',
 
             ]
 
         },
         song = {
             id: 4,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'BLACKstreet',
+            album: 'Another Level',
+            year: 1996,
+            lyrics: 'She\'s got class and style / Street knowledge by the pound',
             otherAnswers: [
-                '',
-                '',
-                '',
-                '',
+                'Salt-N-Peppa',
+                'Vanilla Ice',
+                'Notorious B.I.G.',
+                'BLACKstreet',
 
             ]
 
         },
         song = {
             id: 5,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'Hanson',
+            album: 'Middle of Nowhere',
+            year: 1997,
+            lyrics: 'Plant a seed, plant a flower, plant a rose / You can plant any one of those / Keep planting to find out which one grows/ It\'s a secret no one knows',
             otherAnswers: [
                 '',
                 '',
@@ -209,10 +209,10 @@ const gameVal = {
         },
         song = {
             id: 6,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'Beck',
+            album: 'Mellow Gold',
+            year: 1994,
+            lyrics: 'With the plastic eyeballs / Spray-paint the vegetables / Dog food stalls with the beefcake pantyhose',
             otherAnswers: [
                 '',
                 '',
@@ -224,10 +224,10 @@ const gameVal = {
         },
         song = {
             id: 7,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'Hole',
+            album: 'Live Through This',
+            year: 1994,
+            lyrics: 'I want to be the girl with the most cake / I love him so much it just turns to hate',
             otherAnswers: [
                 '',
                 '',
@@ -239,10 +239,10 @@ const gameVal = {
         },
         song = {
             id: 8,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'Len',
+            album: 'You Can\'t Stop the Bum Rush',
+            year: 1999,
+            lyrics: 'My mind was thugged / all laced and bugged / all twisted wrong and beat / A comfortable three feet deep / Now the fuzzy stare from not being there on a confusing morning week / Impaired my tribal lunar speak',
             otherAnswers: [
                 '',
                 '',
@@ -254,10 +254,10 @@ const gameVal = {
         },
         song = {
             id: 9,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'Deee-Lite',
+            album: 'World Clique',
+            year: 1990,
+            lyrics: 'Your groove, I do deeply dig/ No walls, only the bridge/ My supper dish/ My succotash wish',
             otherAnswers: [
                 '',
                 '',
@@ -269,10 +269,10 @@ const gameVal = {
         },
         song = {
             id: 10,
-            artist: '',
-            album: '',
-            year: 199,
-            lyrics: '',
+            artist: 'LFO',
+            album: 'LFO',
+            year: 1999,
+            lyrics: 'Cherry pants Coke / Crushed rocks till I boogie / Used to hate school / So I had to play hookie ',
             otherAnswers: [
                 '',
                 '',
@@ -286,10 +286,10 @@ const gameVal = {
     thousandsSongs: [
         song = {
             id: 1,
-            artist: '',
+            artist: 'Hilary Duff',
             album: '',
             year: 20,
-            lyrics: '',
+            lyrics: 'If the light is off, then it isn’t on',
             otherAnswers: [
                 '',
                 '',

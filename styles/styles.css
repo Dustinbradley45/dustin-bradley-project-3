@@ -217,7 +217,11 @@ html {
   margin: 0 auto;
 }
 
-.main {
+body {
+  background-color: #202f3e;
+}
+
+main {
   position: relative;
 }
 
@@ -465,9 +469,11 @@ html {
 
 .possibleAnswers > div {
   height: 100px;
-  width: 400px;
-  background-color: #FAFAFA;
+  width: 100%;
+  background-color: #f1faff;
   border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
 }
 
 .hideMe {
@@ -479,10 +485,12 @@ html {
 }
 
 .questionBlock {
-  width: 400px;
-  height: 400px;
+  width: 50%;
+  height: 60vh;
   border: 2px solid black;
-  background-color: white;
+  background-color: #e39e21;
   margin-bottom: 20px;
+  color: #3b4856;
+  font-size: 2rem;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -1,3 +1,4 @@
+//ALL DATA OBJECT
 const gameVal = {
     roundCounter: 0,
     eightiesSongs: [
@@ -435,18 +436,18 @@ const gameVal = {
 }
 
 
+//START GAME NAMESPACE. THROW ALL METHODS ONTO myGame. 
+const myGame = {
 
-
-
-//START: NEED IF ELSE DEPENDING ON USERS CHOICE OF 80/90/00; DIRECT THEM TO THAT ARRAY
+}
 
 //APPENDS QUESTION IN QUESTION BLOCK
-const appendQuestion = () => {
+myGame.appendQuestion = () => {
     $('.questionBlock').text(`${gameVal.eightiesSongs[gameVal.roundCounter].lyrics}`);
 };
 
 //Append possible answers to answer boxes
-const appendAnswers = () => {
+myGame.appendAnswers = () => {
     $('.answerBox1').append(`<p>${gameVal.eightiesSongs[gameVal.roundCounter].otherAnswers[0]}</p>`);
     $('.answerBox2').append(`<p>${gameVal.eightiesSongs[gameVal.roundCounter].otherAnswers[1]}</p>`);
     $('.answerBox3').append(`<p>${gameVal.eightiesSongs[gameVal.roundCounter].otherAnswers[2]}</p>`);
@@ -454,7 +455,7 @@ const appendAnswers = () => {
 
 };
 
-const userAnswer = function () {
+myGame.userAnswer = function () {
     $('.answerBlock').on('click', function () {
 
         if ($(this).find('p')[0].innerHTML == gameVal.eightiesSongs[gameVal.roundCounter].artist) {
@@ -463,7 +464,10 @@ const userAnswer = function () {
             $('.startGame').html(`<button class='nextRound'>Next Round</button>`)
 
         } else {
+
+            //IF WRONG GO RED
             $(this).css('background-color', 'red');
+            $('.answerBlock')
             $('.startGame button').removeClass('hideMe');
             $('.startGame').html(`<button class='nextRound'>Next Round</button>`)
 
@@ -471,56 +475,64 @@ const userAnswer = function () {
     })
 };
 
-const gameReset = () => {
+myGame.gameReset = () => {
     $('.answerBlock').children('p').remove().css('background-color', 'transparent');
-
 
 }
 
-const nextRound = () => {
+//START: NEED IF ELSE DEPENDING ON USERS CHOICE OF 80/90/00; DIRECT THEM TO THAT ARRAY
+//game starts here. User clicks button and it retrieves number that is passed throgh the appendquestion, appendanswer and useranswer functions.
+
+myGame.startQuestions = () => {
+
+    //QUESTION START ON CLICK
+    $('.startGame button').on('click', function () {
+
+        //REMOVE STARTGAME BUTTON SO THAT IT IS UNCLICKABLE
+        $(this).addClass('hideMe');
+
+        //ADDS ANSWER BOXES TO PAGE
+        $('.answerBlock').removeClass('hideMe').addClass
+        ('blockMe');
+
+        //APPENDS LYRICS AND QUESTION TO PAGE
+        myGame.appendQuestion();
+
+        //APPENDS ANSWERS TO PAGE
+        myGame.appendAnswers();
+
+        //IF THE USER ANSWER IS CORRECT, DO WHAT?
+        myGame.userAnswer();
+    })
+};
+
+
+
+
+myGame.nextRound = () => {
     $('.startGame').on('click', '.nextRound', function () {
         console.log('test')
         gameVal.roundCounter += 1;
 
-        gameReset(gameVal.roundCounter);
+        myGame.gameReset(gameVal.roundCounter);
 
-        appendQuestion(gameVal.roundCounter);
+        myGame.appendQuestion(gameVal.roundCounter);
 
-        appendAnswers(gameVal.roundCounter);
+        myGame.appendAnswers(gameVal.roundCounter);
 
-        userAnswer(gameVal.roundCounter);
+        myGame.userAnswer(gameVal.roundCounter);
 
     })
 }
 
+myGame.gameInit = () => {
+    myGame.startQuestions();
+    myGame.nextRound();
 
-//game starts here. User clicks button and it retrieves number that is passed throgh the appendquestion, appendanswer and useranswer functions.
-const gameInit = () => {
-
-
-};
-
-const startQuestions = () => {
-    $('.startGame button').on('click', function () {
-        $(this).addClass('hideMe');
-        $('.answerBlock').removeClass('hideMe').addClass('blockMe');
-
-        appendQuestion();
-
-        appendAnswers();
-
-        userAnswer();
-    })
 };
 
 
 $(function () {
-
-    gameInit();
-
-    startQuestions();
-
-    nextRound();
-
+    myGame.gameInit();
 
 })

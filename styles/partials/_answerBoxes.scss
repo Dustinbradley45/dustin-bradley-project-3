@@ -3,18 +3,28 @@
     display:flex;
     flex-direction:row;
     justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.possibleAnswers {
+    width: 50%;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
-    flex-wrap:
+    flex-wrap:wrap;
 }
 
 .possibleAnswers > div {
     height: 100px;
-    width:50%;
+    width: calc(50% - 40px);
     background-color:$secondaryFontColor;
     border: 1px solid black;
     padding:20px;
     margin: 20px;
 }
+
 
 .hideMe {
     display:none;

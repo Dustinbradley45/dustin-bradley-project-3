@@ -441,6 +441,15 @@ const myGame = {
 
 }
 
+myGame.startScore = 0;
+
+myGame.scoreCounter = () => {
+    myGame.startScore++;
+    $('.counter').empty();
+    $('.counter').append(`<p class='numberAdd'>${myGame.startScore}</p>`);
+}
+
+
 
 
 
@@ -460,11 +469,18 @@ myGame.appendAnswers = () => {
 
 myGame.userAnswer = function () {
     $('.answerBlock').on('click', function () {
+
         if ($(this).find('p')[0].innerHTML == gameVal[myGame.decadeOfChoice][gameVal.roundCounter].artist) {
             $(this).css('background-color', 'green');
+            myGame.scoreCounter();
+
             $('.answerBlock').hide('slow');
+
             $('.nextQuestion button').show('slow');
-            $('.nextQuestion').html(`<button class='nextRound'>Next Round</button>`)
+
+            $('.nextQuestion').html(`<button class='nextRound'>Next Round</button>`);
+
+
 
         } else {
 

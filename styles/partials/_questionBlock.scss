@@ -1,11 +1,13 @@
 .questionBlock {
     width: 50%;
-    height: 60vh;
+    height: 62vh;
     border: 2px solid black;
     background-color:$secondaryColor;
     margin-bottom:20px;
     color: $primaryFontColor;
     font-size:2rem;
+    // padding: 24px;
+    text-align: center;
 }
 
 .questionContainer {

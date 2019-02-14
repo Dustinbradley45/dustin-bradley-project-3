@@ -2,3 +2,26 @@
     margin:0 auto;
     max-width: 1280px;
 }
+
+.rightClass {
+    background-color:green;
+}
+
+.wrongClass {
+    background-color:red;
+}
+
+.nextRound {
+  
+    font-size: 1rem;
+    padding:20px;
+    background-color:$primaryColor;
+    border:2px solid $secondaryColor;
+    color: $secondaryFontColor;
+    margin-top:10px;
+
+}
+
+.nextQuestion {
+    margin-top: 0.5rem;
+}

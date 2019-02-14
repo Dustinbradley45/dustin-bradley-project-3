@@ -471,8 +471,11 @@ myGame.userAnswer = function () {
     $('.answerBlock').on('click', function () {
 
         if ($(this).find('p')[0].innerHTML == gameVal[myGame.decadeOfChoice][gameVal.roundCounter].artist) {
-            $(this).css('background-color', 'green');
             myGame.scoreCounter();
+
+            $(this).addClass('rightClass');
+
+            $(this).removeClass('answerBackground');
 
             $('.answerBlock').hide('slow');
 
@@ -485,9 +488,14 @@ myGame.userAnswer = function () {
         } else {
 
             //IF WRONG GO RED
-            $(this).css('background-color', 'red');
+            $(this).addClass('wrongClass');
+
+            $(this).removeClass('answerBackground');
+
             $('.answerBlock').hide('slow');
+
             $('.nextQuestion button').show('slow');
+
             $('.nextQuestion').html(`<button class='nextRound'>Next Round</button>`)
 
         }
@@ -497,8 +505,15 @@ myGame.userAnswer = function () {
 myGame.gameReset = () => {
     $('.answerBlock').children('p')
         .remove()
-        .css('background-color', 'white');
+       
 
+}
+
+myGame.gameEnd = () => {
+    if (gameVal.roundCounter === 10) {
+        console.log('game is done')
+    }
+        
 }
 
 //START: NEED IF ELSE DEPENDING ON USERS CHOICE OF 80/90/00; DIRECT THEM TO THAT ARRAY
@@ -540,6 +555,8 @@ myGame.nextRound = () => {
 
         myGame.userAnswer(gameVal.roundCounter);
 
+         $('.answerBlock').removeClass('rightClass', 'wrongClass').addClass('answerBackground');
+
     })
 }
 
@@ -548,10 +565,13 @@ myGame.gameInit = () => {
     $('button').on('click', function () {
         const chosenGeneration = $(this).attr('id')
         myGame.decadeOfChoice = [chosenGeneration];
+        $('.questionBlock').css('height', '35vh').css('padding', '24px');
 
         myGame.startQuestions();
         
         myGame.nextRound();
+
+        myGame.gameEnd(gameVal.roundCounter);
     })    
     
 }

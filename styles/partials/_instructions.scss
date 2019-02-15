@@ -9,24 +9,28 @@
     text-align:center;
     display:flex;
     flex-direction:row;
+    align-items:center;
+   
     
  
     position:relative;
     top: 10%;
+
+    .animationStart{
+         animation:swing-out-left-fwd 1s linear;
+    }
     
 
-    a {
-        text-decoration:none;
-        color:$primaryFontColor;
+    button {
+        color:$secondaryColor;
         padding:10px;
+        background-color:$primaryColor;
+        border:none;
 
         &:hover {
-            border: 1px solid $primaryFontColor;
+            border: 2px solid $primaryFontColor;
 
         }
     }
 }
 
-.instructionBox {
-  
-}

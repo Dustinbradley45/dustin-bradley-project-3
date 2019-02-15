@@ -292,18 +292,76 @@ h1 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   top: 10%;
 }
 
-.instructions a {
-  text-decoration: none;
-  color: #3b4856;
-  padding: 10px;
+.instructions .animationStart {
+  -webkit-animation: swing-out-left-fwd 1s linear;
+          animation: swing-out-left-fwd 1s linear;
 }
 
-.instructions a:hover {
-  border: 1px solid #3b4856;
+.instructions button {
+  color: #e39e21;
+  padding: 10px;
+  background-color: #202f3e;
+  border: none;
+}
+
+.instructions button:hover {
+  border: 2px solid #3b4856;
+}
+
+.rightHeader {
+  width: 50%;
+  height: 100vh;
+  -webkit-transform: translate(100%, -90%);
+          transform: translate(100%, -90%);
+}
+
+.rightHeader form {
+  padding-top: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Pontano Sans", sans-serif;
+  color: #202f3e;
+  font-size: 1rem;
+}
+
+.rightHeader form label {
+  font-size: 1.5rem;
+}
+
+.rightHeader form input {
+  margin-top: 10px;
+  border: none;
+  padding: 0 10px;
+  border-bottom: 3px solid #202f3e;
+  background-color: transparent;
+  text-align: center;
+}
+
+.rightHeader form input:focus {
+  -webkit-box-shadow: 0 8px 6px -6px #202f3e;
+          box-shadow: 0 8px 6px -6px #202f3e;
+}
+
+.rightHeader form button {
+  margin-top: 1rem;
 }
 
 .flexWrapper {

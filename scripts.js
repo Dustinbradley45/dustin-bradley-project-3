@@ -450,7 +450,14 @@ myGame.scoreCounter = () => {
 }
 
 
+myGame.nameStore = () => {
+    $('#nameSubmit').on('click', function (event) { 
+        event.preventDefault();
 
+       const userName = $('#nameInput').val();
+
+    })
+}
 
 
 //APPENDS QUESTION IN QUESTION BLOCK
@@ -502,6 +509,8 @@ myGame.userAnswer = function () {
     })
 };
 
+
+
 myGame.gameReset = () => {
     $('.answerBlock').children('p')
         .remove()
@@ -509,8 +518,10 @@ myGame.gameReset = () => {
 
 }
 
+
+
 myGame.gameEnd = () => {
-    if (gameVal.roundCounter === 10) {
+    if (gameVal.roundCounter < myGame.decadeOfChoice.length) {
         console.log('game is done')
     }
         
@@ -562,16 +573,20 @@ myGame.nextRound = () => {
 
 myGame.gameInit = () => {
 
-    $('button').on('click', function () {
+    myGame.nameStore(name);
+
+    $('.generation').on('click', function () {
         const chosenGeneration = $(this).attr('id')
         myGame.decadeOfChoice = [chosenGeneration];
+
+        console.log(myGame.decadeOfChoice.length)
         $('.questionBlock').css('height', '35vh').css('padding', '24px');
 
         myGame.startQuestions();
         
         myGame.nextRound();
 
-        myGame.gameEnd(gameVal.roundCounter);
+        myGame.gameEnd(gameVal.roundCounter, name);
     })    
     
 }

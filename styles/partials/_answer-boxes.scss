@@ -1,0 +1,38 @@
+.possible-answers {
+    width: 50%;
+    @include displayFlex(row,flex-start,flex-start);
+    flex-wrap: wrap;
+}
+
+.possible-answers > div {
+    height: 100px;
+    width: calc(50% - 40px);
+    border: 1px solid black;
+    padding:20px;
+    margin: 20px;
+
+    &:focus  {
+        border:green 2px solid;
+    }
+}
+
+.answer-background {
+    background-color:$secondary-Font-Color;
+
+}
+
+.hide-me {
+    display:none;
+}
+
+.block-me {
+    display:block;
+ 
+}
+
+.generation {
+    border: none;
+    background-color:$primary-Color;
+    color:$secondary-Color;
+    font-family: $primary-Font;
+}

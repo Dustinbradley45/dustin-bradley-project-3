@@ -1,34 +1,24 @@
 .instructions {
     width: 50%;
     height: 90vh;
-    color:$secondaryFontColor;
-    letter-spacing: 1.2px;
-    background-color: $primaryColor;
-    border:2px solid $primaryColor;
     padding: 3rem;
-    text-align:center;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-   
-    
- 
-    position:relative;
+    color:$secondary-Font-Color;
     top: 10%;
-
-    .animationStart{
-         animation:swing-out-left-fwd 1s linear;
-    }
-    
+    letter-spacing: 1.2px;
+    background-color: $primary-Color;
+    border:2px solid $primary-Color;
+    text-align:center;
+    @include displayFlex(row, flex-start, center);
+    position:relative;
 
     button {
-        color:$secondaryColor;
+        color:$secondary-Color;
         padding:10px;
-        background-color:$primaryColor;
+        background-color:$primary-Color;
         border:none;
 
         &:hover {
-            border: 2px solid $primaryFontColor;
+            border: 2px solid $primary-Font-Color;
 
         }
     }

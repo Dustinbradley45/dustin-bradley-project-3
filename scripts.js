@@ -446,15 +446,15 @@ myGame.startScore = 0;
 myGame.scoreCounter = () => {
     myGame.startScore++;
     $('.counter').empty();
-    $('.counter').append(`<p class='numberAdd'>${myGame.startScore}</p>`);
+    $('.counter').append(`<p class='number-add'>${myGame.startScore}</p>`);
 }
 
 
 myGame.nameStore = () => {
-    $('#nameSubmit').on('click', function (event) { 
+    $('#name-submit').on('click', function (event) { 
         event.preventDefault();
 
-       const userName = $('#nameInput').val();
+       const userName = $('#name-input').val();
 
     })
 }
@@ -462,48 +462,48 @@ myGame.nameStore = () => {
 
 //APPENDS QUESTION IN QUESTION BLOCK
 myGame.appendQuestion = () => {
-    $('.questionBlock').text(`${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].lyrics}`);
+    $('.question-block').text(`${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].lyrics}`);
 };
 
 //Append possible answers to answer boxes
 myGame.appendAnswers = () => {
-    $('.answerBox1').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[0]}</p>`);
-    $('.answerBox2').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[1]}</p>`);
-    $('.answerBox3').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[2]}</p>`);
-    $('.answerBox4').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[3]}</p>`);
+    $('.answer-box-1').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[0]}</p>`);
+    $('.answer-box-2').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[1]}</p>`);
+    $('.answer-box-3').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[2]}</p>`);
+    $('.answer-box-4').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[3]}</p>`);
 
 };
 
 myGame.userAnswer = function () {
-    $('.answerBlock').on('click', function () {
+    $('.answer-block').on('click', function () {
 
         if ($(this).find('p')[0].innerHTML == gameVal[myGame.decadeOfChoice][gameVal.roundCounter].artist) {
             myGame.scoreCounter();
 
-            $(this).addClass('rightClass');
+            $(this).addClass('right-class');
 
-            $(this).removeClass('answerBackground');
+            $(this).removeClass('answer-background');
 
-            $('.answerBlock').hide('slow');
+            $('.answer-block').hide('slow');
 
-            $('.nextQuestion button').show('slow');
+            $('.next-question button').show('slow');
 
-            $('.nextQuestion').html(`<button class='nextRound'>Next Round</button>`);
+            $('.next-question').html(`<button class='next-round'>Next Round</button>`);
 
 
 
         } else {
 
             //IF WRONG GO RED
-            $(this).addClass('wrongClass');
+            $(this).addClass('wrong-class');
 
-            $(this).removeClass('answerBackground');
+            $(this).removeClass('answer-background');
 
-            $('.answerBlock').hide('slow');
+            $('.answer-block').hide('slow');
 
-            $('.nextQuestion button').show('slow');
+            $('.next-question button').show('slow');
 
-            $('.nextQuestion').html(`<button class='nextRound'>Next Round</button>`)
+            $('.next-question').html(`<button class='next-round'>Next Round</button>`)
 
         }
     })
@@ -512,7 +512,7 @@ myGame.userAnswer = function () {
 
 
 myGame.gameReset = () => {
-    $('.answerBlock').children('p')
+    $('.answer-block').children('p')
         .remove()
        
 
@@ -521,9 +521,7 @@ myGame.gameReset = () => {
 
 
 myGame.gameEnd = () => {
-    if (gameVal.roundCounter < myGame.decadeOfChoice.length) {
-        console.log('game is done')
-    }
+   
         
 }
 
@@ -534,8 +532,8 @@ myGame.gameEnd = () => {
 myGame.startQuestions = () => {
 
     //ADDS ANSWER BOXES TO PAGE
-    $('.answerBlock').removeClass('hideMe').addClass
-    ('blockMe');
+    $('.answer-block').removeClass('hide-me').addClass
+    ('block-me');
 
     //APPENDS LYRICS AND QUESTION TO PAGE
     myGame.appendQuestion();
@@ -552,9 +550,9 @@ myGame.startQuestions = () => {
 
 
 myGame.nextRound = () => {
-    $('.nextQuestion').on('click', '.nextRound', function () {
+    $('.next-question').on('click', '.next-round', function () {
 
-        $('.answerBlock').show('slow');
+        $('.answer-block').show('slow');
     
         gameVal.roundCounter += 1;
 
@@ -566,7 +564,7 @@ myGame.nextRound = () => {
 
         myGame.userAnswer(gameVal.roundCounter);
 
-         $('.answerBlock').removeClass('rightClass', 'wrongClass').addClass('answerBackground');
+         $('.answer-block').removeClass('right-class', 'wrong-class').addClass('answer-background');
 
     })
 }
@@ -579,8 +577,7 @@ myGame.gameInit = () => {
         const chosenGeneration = $(this).attr('id')
         myGame.decadeOfChoice = [chosenGeneration];
 
-        console.log(myGame.decadeOfChoice.length)
-        $('.questionBlock').css('height', '35vh').css('padding', '24px');
+        $('.question-block').css('height', '35vh').css('padding', '24px');
 
         myGame.startQuestions();
         

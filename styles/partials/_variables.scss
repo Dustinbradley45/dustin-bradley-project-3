@@ -1,12 +1,39 @@
 // COLORS
 
-$primaryColor:#202f3e;
-$secondaryColor: #e39e21;
-$primaryFontColor:#3b4856;
-$secondaryFontColor: #f1faff;
+$primary-Color:#202f3e;
+$secondary-Color: #e39e21;
+$primary-Font-Color:#3b4856;
+$secondary-Font-Color: #f1faff;
 
 
 //FONTS
 
-$titleFont: 'Permanent Marker', cursive;
-$primaryFont: 'Pontano Sans', sans-serif;
+$title-Font: 'Permanent Marker', cursive;
+$primary-Font: 'Pontano Sans', sans-serif;
+
+//MIXINS
+
+@mixin display-Flex ($direction, $justify, $align){
+    display:flex;
+    flex-direction:$direction;
+    justify-content: $justify;
+    align-items:$align;
+    
+}
+
+$lg-desktop: 'only screen and (max-width: 1440px)';
+$med-desktop: 'only screen and (max-width: 1280px)';
+$lg-tablet: 'only screen and (max-width:1000px)';
+$med-tablet: 'only screen and (max-width: 850px)';
+$sm-tablet: 'only screen and (max-width: 750px)';
+$lg-phone: 'only screen and (max-width: 550px)';
+$med-phone: 'only screen and (max-width: 400px)';
+$sm-phone: 'only screen and (max-width: 350px)';
+
+
+
+// $information-phone: "only screen and (max-width : 320px)";
+
+// @media #{$information-phone} {
+//     background: red;
+// }

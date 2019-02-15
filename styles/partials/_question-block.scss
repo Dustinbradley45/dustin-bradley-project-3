@@ -1,19 +1,16 @@
-.questionBlock {
+.question-block {
     width: 50%;
     height: 62vh;
     border: 2px solid black;
-    background-color:$secondaryColor;
+    background-color:$secondary-Color;
     margin-bottom:20px;
-    color: $primaryFontColor;
+    color: $primary-Font-Color;
     font-size:2rem;
     text-align: center;
 }
 
-.questionContainer {
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items:center;
+.question-container {
+    @include displayFlex(column, center, center);
     margin-top:8%;
 
     .generation {

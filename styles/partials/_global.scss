@@ -3,25 +3,24 @@
     max-width: 1280px;
 }
 
-.rightClass {
+.right-class {
     background-color:green;
 }
 
-.wrongClass {
+.wrong-class {
     background-color:red;
 }
 
-.nextRound {
-  
+.next-round {
     font-size: 1rem;
     padding:20px;
-    background-color:$primaryColor;
-    border:2px solid $secondaryColor;
-    color: $secondaryFontColor;
+    background-color:$primary-Color;
+    border:2px solid $secondary-Color;
+    color: $secondary-Font-Color;
     margin-top:10px;
 
 }
 
-.nextQuestion {
+.next-question {
     margin-top: 0.5rem;
 }

@@ -456,14 +456,7 @@ myGame.scoreCounter = () => {
 }
 
 
-myGame.nameStore = () => {
-    $('#name-submit').on('click', function (event) { 
-        event.preventDefault();
 
-       const userName = $('#name-input').val();
-
-    })
-}
 
 
 //APPENDS QUESTION IN QUESTION BLOCK
@@ -531,6 +524,20 @@ myGame.gameReset = () => {
         
         .remove();
     
+}
+
+
+
+myGame.nameStore = () => {
+    $('#name-submit').on('click', function (event) {
+        event.preventDefault();
+        const userName = $('#name-input').val();
+
+        $('.popup-info')
+        $('.popup-info').append(`<h4>Thanks, ${userName}! Good Luck!</h4`);
+        console.log(userName)
+
+    })
 }
 
 myGame.endGame = (userName) => {
@@ -614,9 +621,9 @@ myGame.nextRound = () => {
 
 
 
-myGame.gameInit = () => {
+myGame.gameInit = (name) => {
 
-    myGame.nameStore();
+    myGame.nameStore(name);
 
     $('.generation').on('click', function () {
         const chosenGeneration = $(this).attr('id')
@@ -636,18 +643,30 @@ myGame.gameInit = () => {
 $(function () {
     myGame.gameInit();
 
-    $('.instruction-slide').on('click', function () { 
-        $('.instructions').animate({ 'width': '4rem' }, '400');
-
-        $('.right-header').css({ 'z-index': '1' });
-
-        
-        $('.instruction-box').empty().append(`<div class='box-1'></div>
-        <div class='box-2'></div>
-        `).addClass('instruction-close').animate({ 'opacity': '1' }, 'slow');
-
-    })
+    $('.instruction-slide').on('click', function () {
+        $('.instructions').animate({ 'width': '2rem' }, '400');
 
  
+        $('.instruction-box').empty()
+        
+        $('.icon-box').append(`
+        <div class='box-1'></div>
+        <div class='box-2'></div>
+        </span>
+        `).addClass('instruction-close').animate({ 'opacity': '1' }, 'slow');
 
+    });
+
+    $('#name-submit').on('click', function () {
+
+        myGame.nameStore();
+        
+        $('.right-header').animate({ 'height': '20vh' }, 'fast').empty().append(`<div class='good-luck-message'> Thanks, ${name}! Good Luck!`).css({'padding': '14vh 0 0 43%'});
+
+        $('main').css({ 'z-index': '50' });
+        
+        $('.question-block').animate({ 'opacity': '1' }, 300).animate({'translate': 'scale(2)'});
+
+
+    })
 })

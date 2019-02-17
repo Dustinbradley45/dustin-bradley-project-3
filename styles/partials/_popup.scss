@@ -1,0 +1,20 @@
+.right-page-form {
+    position:relative;
+}
+
+.popup-modal {
+    position:absolute;
+    text-align:center;
+    z-index:-1;
+    top:0;
+    right:0;
+    left:0;
+    bottom:0;
+    background: rgba($secondary-font-color, .3);
+
+    .popup-info {
+
+       margin-top:25%;
+        
+    }
+}

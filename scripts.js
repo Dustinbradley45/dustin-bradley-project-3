@@ -476,7 +476,7 @@ myGame.appendAnswers = () => {
 
     $('.answer-box-4').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[3]}</p>`);
 
-    $('.next-round').hide('100');
+    $('.next-round').fadeOut('100');
 
 };
 
@@ -488,25 +488,33 @@ myGame.userAnswer = function () {
 
             myGame.scoreCounter();
 
-            $('.question-block').empty().append(`<h3>Correct!</h3>`);
+            $('.question-block').empty().append(`<h3>Correct!</h3>
+            <ul>
+                <li>Album: ${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].album}</li>
+                <li>Year: ${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].year}</li>
+            </ul>`);
 
-            $('.answer-block').hide('750');
-
-            $('.next-question button').show('750');
+            $('.answer-block').fadeOut('fast');
 
             $('.next-question').html(`<button class='next-round'>Next Round</button>`);
 
+            $('.next-question button').fadeIn('750');
+            
              myGame.endGame();
 
         } else {
 
             //IF WRONG GO RED
 
-            $('.answer-block').hide('750');
+            $('.answer-block').fadeOut('750');
 
-            $('.next-question button').show('750');
+            $('.next-question button').fadeIn('750');
 
-            $('.question-block').empty().append(`<h3>Wrong Choice!</h3>`);
+            $('.question-block').empty().append(`<h3>Wrong Choice!</h3>
+             <ul>
+                <li>Album: ${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].album}</li>
+                <li>Year: ${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].year}</li>
+            </ul>`);
 
             $('.next-question').html(`<button class='next-round'>Next Round</button>`);
 
@@ -528,19 +536,15 @@ myGame.gameReset = () => {
 
 
 
-myGame.nameStore = () => {
-    $('#name-submit').on('click', function (event) {
+// myGame.nameStore = () => {
+ $('#name-submit').on('click', function (event) {
         event.preventDefault();
-        const userName = $('#name-input').val();
-
-        $('.popup-info')
-        $('.popup-info').append(`<h4>Thanks, ${userName}! Good Luck!</h4`);
-        console.log(userName)
+       return userName = $('#name-input').val();
 
     })
-}
+// }
 
-myGame.endGame = (userName) => {
+myGame.endGame = () => {
     console.log(gameVal.roundCounter, gameVal[myGame.decadeOfChoice][gameVal.roundCounter].id);
 
     if (gameVal[myGame.decadeOfChoice][gameVal.roundCounter].id == 10 ) {
@@ -551,10 +555,12 @@ myGame.endGame = (userName) => {
          <button class="generation nineties" id='ninetiesSongs'>90s</button> 
          <button class="generation thousands" id='thousandsSongs'>00s</button>
         `)
-        
-        $('.answer-block').hide('10');
 
-        $('.next-round').hide('10');
+        console.log('')
+        
+        $('.answer-block').fadeOut();
+
+        $('.next-round').fadeOut();
 
           myGame.tryAgain();
     } 
@@ -570,7 +576,11 @@ myGame.tryAgain = () => {
     myGame.gameInit();
 
     $('.generation').on('click', function () {
-        $('.answer-block').empty().show('750');
+        $('.answer-block').children('p')
+
+            .remove();
+
+        $('.answer-block').fadeIn('750');
     })
 
     $('.question-block').css('height', '50vh').css('padding', '5px');
@@ -621,9 +631,9 @@ myGame.nextRound = () => {
 
 
 
-myGame.gameInit = (name) => {
+myGame.gameInit = () => {
 
-    myGame.nameStore(name);
+    // myGame.nameStore();
 
     $('.generation').on('click', function () {
         const chosenGeneration = $(this).attr('id')
@@ -645,7 +655,6 @@ $(function () {
 
     $('.instruction-slide').on('click', function () {
         $('.instructions').animate({ 'width': '2rem' }, '400');
-
  
         $('.instruction-box').empty()
         
@@ -655,18 +664,31 @@ $(function () {
         </span>
         `).addClass('instruction-close').animate({ 'opacity': '1' }, 'slow');
 
+
     });
 
     $('#name-submit').on('click', function () {
 
-        myGame.nameStore();
         
-        $('.right-header').animate({ 'height': '20vh' }, 'fast').empty().append(`<div class='good-luck-message'> Thanks, ${name}! Good Luck!`).css({'padding': '14vh 0 0 43%'});
+        $('.right-header').animate({ 'height': '20vh' }, 'fast').empty().append(`<div class='good-luck-message'>
+            <h4>Thanks, ${userName}! Good Luck!</h4>
+        </div>`)
+            .css({ 'padding': '14vh 0 0 43%' });
 
+        // myGame.nameStore(userName);
+
+        $('.good-luck-message').append(``);
+        console.log(userName)
+        
         $('main').css({ 'z-index': '50' });
         
-        $('.question-block').animate({ 'opacity': '1' }, 300).animate({'translate': 'scale(2)'});
+        $('.question-block').animate({ 'opacity': '1' }, 700);
 
 
+    });
+
+    $('.answer-block').on('click', function () {
+        $('main').slideDown('slow');
+        console.log('duggie')
     })
 })

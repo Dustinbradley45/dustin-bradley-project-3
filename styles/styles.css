@@ -231,6 +231,10 @@ body {
   overflow: hidden;
 }
 
+ul {
+  list-style: none;
+}
+
 header {
   margin-bottom: 5%;
   height: 100vh;
@@ -455,6 +459,9 @@ h1 {
   font-family: "Metrophobic", sans-serif;
   color: #202f3e;
   font-size: 1.2rem;
+  position: relative;
+  bottom: 2rem;
+  right: 3rem;
 }
 
 .right-page-form {
@@ -563,7 +570,7 @@ main {
 .question-block {
   width: 50%;
   height: 65vh;
-  border: 2px solid black;
+  border: 2px solid #3b4856;
   background-color: #e39e21;
   margin-bottom: 20px;
   color: #3b4856;
@@ -597,6 +604,18 @@ main {
   width: 80%;
   padding: 20px;
   margin: 20px;
+  border: 2px solid #3b4856;
+  -webkit-transition: all .4s linear;
+  transition: all .4s linear;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.question-container .generation:hover {
+  border: 2px solid #f1faff;
+  background-color: #3b4856;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media only screen and (max-width: 850px) {

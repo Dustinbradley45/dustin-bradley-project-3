@@ -1,15 +1,13 @@
 .right-header {
-    width: 50%;
+    width: 90%;
     height: 100vh;
-    transform: translate(100%, -90%);
-    // z-index:-1;
-    
+   transform: translateY(-23rem);
+   z-index:-1;  
 
     form {
-        padding-top: 70%;
-        @include displayFlex(column, center, center);
-        font-family:$primary-Font;
-        color: $primary-Color;
+        @include display-flex(column, center, center);
+        font-family:$primary-font;
+        color: $primary-color;
         font-size:1rem;
 
         label {
@@ -20,18 +18,22 @@
             margin-top:10px;
             border:none;
             padding:0 10px;
-            border-bottom: 3px solid $primary-Color;
+            border-bottom: 3px solid $primary-color;
             background-color:transparent;
             text-align:center;
 
             &:focus {
-               box-shadow: 0 8px 6px -6px $primary-Color;
+               box-shadow: 0 8px 6px -6px $primary-color;
                
             }
         }
         a {
             margin-top:1rem;
+            text-decoration: none;
+            color:$primary-color;
+            font-family: $primary-font;
         }
     }
 
 }
+

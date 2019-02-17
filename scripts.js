@@ -275,10 +275,10 @@ const gameVal = {
             year: 1999,
             lyrics: 'Cherry pants Coke / Crushed rocks till I boogie / Used to hate school / So I had to play hookie ',
             otherAnswers: [
-                '',
-                '',
-                '',
-                '',
+                'test1',
+                'test2',
+                'test3',
+                'test4',
 
             ]
 
@@ -435,6 +435,10 @@ const gameVal = {
     ]
 }
 
+//NOTES: 1. PROBLEM WITH SCORING. Seems to be adding the previous score
+//2. TRYING TO END THIS GAME
+
+
 
 //START GAME NAMESPACE. THROW ALL METHODS ONTO myGame. 
 const myGame = {
@@ -445,7 +449,9 @@ myGame.startScore = 0;
 
 myGame.scoreCounter = () => {
     myGame.startScore++;
+
     $('.counter').empty();
+
     $('.counter').append(`<p class='number-add'>${myGame.startScore}</p>`);
 }
 
@@ -462,48 +468,56 @@ myGame.nameStore = () => {
 
 //APPENDS QUESTION IN QUESTION BLOCK
 myGame.appendQuestion = () => {
-    $('.question-block').text(`${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].lyrics}`);
+    
+    $('.question-block').html(`<p class='lyrics'>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].lyrics}</p>`);
 };
 
 //Append possible answers to answer boxes
 myGame.appendAnswers = () => {
+
     $('.answer-box-1').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[0]}</p>`);
+
     $('.answer-box-2').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[1]}</p>`);
+
     $('.answer-box-3').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[2]}</p>`);
+
     $('.answer-box-4').append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[3]}</p>`);
+
+    $('.next-round').hide('100');
 
 };
 
 myGame.userAnswer = function () {
-    $('.answer-block').on('click', function () {
+    $('.answer-block').off().click(function () {
+        console.log('answer block clicked')
 
         if ($(this).find('p')[0].innerHTML == gameVal[myGame.decadeOfChoice][gameVal.roundCounter].artist) {
+
             myGame.scoreCounter();
 
-            $(this).addClass('right-class');
+            $('.question-block').empty().append(`<h3>Correct!</h3>`);
 
-            $(this).removeClass('answer-background');
+            $('.answer-block').hide('750');
 
-            $('.answer-block').hide('slow');
-
-            $('.next-question button').show('slow');
+            $('.next-question button').show('750');
 
             $('.next-question').html(`<button class='next-round'>Next Round</button>`);
 
-
+             myGame.endGame();
 
         } else {
 
             //IF WRONG GO RED
-            $(this).addClass('wrong-class');
 
-            $(this).removeClass('answer-background');
+            $('.answer-block').hide('750');
 
-            $('.answer-block').hide('slow');
+            $('.next-question button').show('750');
 
-            $('.next-question button').show('slow');
+            $('.question-block').empty().append(`<h3>Wrong Choice!</h3>`);
 
-            $('.next-question').html(`<button class='next-round'>Next Round</button>`)
+            $('.next-question').html(`<button class='next-round'>Next Round</button>`);
+
+             myGame.endGame();
 
         }
     })
@@ -512,22 +526,51 @@ myGame.userAnswer = function () {
 
 
 myGame.gameReset = () => {
-    $('.answer-block').children('p')
-        .remove()
-       
 
+    $('.answer-block').children('p')
+        
+        .remove();
+    
 }
 
+myGame.endGame = (userName) => {
+    console.log(gameVal.roundCounter, gameVal[myGame.decadeOfChoice][gameVal.roundCounter].id);
 
+    if (gameVal[myGame.decadeOfChoice][gameVal.roundCounter].id == 10 ) {
 
-myGame.gameEnd = () => {
-   
+        $('.question-block').empty().append(`
+        <h3 class='play-again'>Play Again?</h3>
+        <button class="generation eighties" id='eightiesSongs'>80s</button>
+         <button class="generation nineties" id='ninetiesSongs'>90s</button> 
+         <button class="generation thousands" id='thousandsSongs'>00s</button>
+        `)
         
+        $('.answer-block').hide('10');
+
+        $('.next-round').hide('10');
+
+          myGame.tryAgain();
+    } 
+}
+
+myGame.tryAgain = () => {
+
+    myGame.roundCounter = 0;
+
+
+    myGame.scoreCounter = 0;
+
+    myGame.gameInit();
+
+    $('.generation').on('click', function () {
+        $('.answer-block').empty().show('750');
+    })
+
+    $('.question-block').css('height', '50vh').css('padding', '5px');
 }
 
 //START: NEED IF ELSE DEPENDING ON USERS CHOICE OF 80/90/00; DIRECT THEM TO THAT ARRAY
 //game starts here. User clicks button and it retrieves number that is passed through the appendquestion, appendanswer and useranswer functions.
-
 
 myGame.startQuestions = () => {
 
@@ -543,56 +586,68 @@ myGame.startQuestions = () => {
 
     //IF THE USER ANSWER IS CORRECT, DO WHAT?
     myGame.userAnswer();
-}
-;
-
-
-
+};
 
 myGame.nextRound = () => {
     $('.next-question').on('click', '.next-round', function () {
 
-        $('.answer-block').show('slow');
-    
+        //ADDS ONE TO ROUNDCOUNTER 
         gameVal.roundCounter += 1;
 
+        //SHOW ANSWERBLOCK WITH NEXT ROUND DATA
+        $('.answer-block').show(750);
+        
+        //RESET THE GAME DATA (ALL APPENDED DATA CLEARED)
         myGame.gameReset(gameVal.roundCounter);
-
+        
+        //REAPPEND QUESTIONS 
         myGame.appendQuestion(gameVal.roundCounter);
 
+        //REAPPEND ANSWERS
         myGame.appendAnswers(gameVal.roundCounter);
 
+        //TAKE IN ANOTHER USER ANSWER        
         myGame.userAnswer(gameVal.roundCounter);
-
-         $('.answer-block').removeClass('right-class', 'wrong-class').addClass('answer-background');
-
     })
 }
 
+
+
+
 myGame.gameInit = () => {
 
-    myGame.nameStore(name);
+    myGame.nameStore();
 
     $('.generation').on('click', function () {
         const chosenGeneration = $(this).attr('id')
         myGame.decadeOfChoice = [chosenGeneration];
 
-        $('.question-block').css('height', '35vh').css('padding', '24px');
+        $('.question-block').css('height', '36vh').css('padding', '5px');
 
         myGame.startQuestions();
         
         myGame.nextRound();
 
-        myGame.gameEnd(gameVal.roundCounter, name);
     })    
     
 }
 
 
-
-
-
 $(function () {
     myGame.gameInit();
+
+    $('.instruction-slide').on('click', function () { 
+        $('.instructions').animate({ 'width': '4rem' }, '400');
+
+        $('.right-header').css({ 'z-index': '1' });
+
+        
+        $('.instruction-box').empty().append(`<div class='box-1'></div>
+        <div class='box-2'></div>
+        `).addClass('instruction-close').animate({ 'opacity': '1' }, 'slow');
+
+    })
+
+ 
 
 })

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>project3</title>
-    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Pontano+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Metrophobic|Permanent+Marker" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
@@ -23,29 +23,27 @@
                 </div>
             </div>
         </section>
-        
-        <section class="instructions">
-            <div class="instruction-box">
-                <h2>Instructions:</h2>
-                <p>Choose what lyrics are and guess the artist. Each generation has ten questions.</p>
-                <button>Got it!</button>
+        <div class="flex-this">
+            <section class="instructions">
+                <div class="instruction-box">
+                    <h2 class='slide-header'>Instructions:</h2>
+                    <p>Choose what lyrics are and guess the artist. Each generation has ten questions.</p>
+                    <button class='instruction-slide'>Got it!</button>
+                </div>
+            </section>
+            <div class="right-header">
+                <form action="">
+                    <label for="name">Enter In Your First Name</label>
+                    <input type="name" id='name-input'>
+                    <a href="#main-game" id='name-submit'>Lets Play!</a>
+                </form>
             </div>
-        </section>
-       <div class="right-header">
-
-           <form action="">
-               <label for="name">Enter In Your First Name</label>
-               <input type="name" id='name-input'>
-               <a href="#main-game" role="button">Lets Play!</a>
-           </form>
-
-       </div>
+        </div>
         
     </header>
-   <main>
-      
+   <main  id='main-game'>
        </div>
-       <div class="flex-wrapper" id='main-game'>
+       <div class="flex-wrapper">
             <section class='question-block'>
                 <div class="question-container">
                     <!-- CANNOT KABOB CASE THESE IDS AS THEY ARE WHAT LINKS MY ARRAY TO THIS BUTTON -->

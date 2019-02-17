@@ -1,33 +1,33 @@
 // COLORS
 
-$primary-Color:#202f3e;
-$secondary-Color: #e39e21;
-$primary-Font-Color:#3b4856;
-$secondary-Font-Color: #f1faff;
+$primary-color:#202f3e;
+$secondary-color: #e39e21;
+$primary-font-color:#3b4856;
+$secondary-font-color: #f1faff;
 
 
 //FONTS
 
-$title-Font: 'Permanent Marker', cursive;
-$primary-Font: 'Pontano Sans', sans-serif;
+
+$secondary-font: 'Permanent Marker', cursive;
+$primary-font: 'Metrophobic', sans-serif;
 
 //MIXINS
 
-@mixin display-Flex ($direction, $justify, $align){
+@mixin display-flex ($direction, $justify, $align){
     display:flex;
     flex-direction:$direction;
     justify-content: $justify;
     align-items:$align;
     
 }
-
 $lg-desktop: 'only screen and (max-width: 1440px)';
 $med-desktop: 'only screen and (max-width: 1280px)';
 $lg-tablet: 'only screen and (max-width:1000px)';
 $med-tablet: 'only screen and (max-width: 850px)';
-$sm-tablet: 'only screen and (max-width: 750px)';
-$lg-phone: 'only screen and (max-width: 550px)';
-$med-phone: 'only screen and (max-width: 400px)';
+$sm-tablet: 'only screen and (max-width: 800px)';
+$lg-phone: 'only screen and (max-width: 700px)';
+$med-phone: 'only screen and (max-width: 550px)';
 $sm-phone: 'only screen and (max-width: 350px)';
 
 

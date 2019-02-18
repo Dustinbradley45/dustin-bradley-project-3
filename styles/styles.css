@@ -413,7 +413,7 @@ main {
 
 .question-block {
   width: 50%;
-  height: 58vh;
+  height: 53vh;
   border: 2px solid #3b4856;
   background-color: #e39e21;
   margin-bottom: 20px;
@@ -479,13 +479,11 @@ main {
   .header-inside {
     margin: 0 2rem; }
   .possible-answers {
-    width: 76%; } }
-
-.counter {
-  width: 15%; }
-
-.instructions .instruction-box {
-  width: 77%; }
+    width: 76%; }
+  .counter {
+    width: 15%; }
+  .instructions .instruction-box {
+    width: 77%; } }
 
 @media only screen and (max-width: 700px) {
   .header-inside {
@@ -498,8 +496,9 @@ main {
   .question-block {
     width: 100%;
     padding: 10px;
-    transform: translateY(9rem);
-    border: none; }
+    transform: translateY(12rem);
+    border: 1px solid #202f3e;
+    height: 100vh; }
   .right-header {
     width: 100%;
     transform: none; }
@@ -515,7 +514,7 @@ main {
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 7rem; }
+    transform: tranlateY(-2rem); }
     .possible-answers > button {
       width: 100%;
       margin: 12px 0;
@@ -523,7 +522,7 @@ main {
       height: 3rem;
       padding: 6px; }
   .next-question {
-    transform: translateY(-500px); }
+    margin-top: 22%; }
   .lyrics {
     font-size: 1.4rem;
     padding: 10px; }
@@ -540,4 +539,13 @@ main {
   .right-page-form {
     width: 100%; }
   main {
-    height: 84vh; } }
+    height: 84vh; }
+  .user-score {
+    width: 100%;
+    transform: translateY(-4rem); } }
+
+@media only screen and (max-width: 400px) {
+  .question-block {
+    transform: translateY(12rem); }
+  .user-score button {
+    width: 100%; } }

@@ -574,8 +574,6 @@ myGame.endGame = () => {
 
         $(".answer-block").fadeOut();
 
-        // $(".next-round").fadeIn();
-
         myGame.tryAgain();
     }
 }
@@ -643,7 +641,11 @@ myGame.nextRound = () => {
     })
 }
 
-
+myGame.newGeneration = () => {
+    $('.user-score').on('click', '.next-level-gen', function () { 
+        mygame.gameInit();
+    })
+}
 
 
 myGame.gameInit = () => {
@@ -658,16 +660,18 @@ myGame.gameInit = () => {
 
         myGame.nextRound();
 
+        myGame.newGeneration();
+
     })
 
 }
 
 
-
+//MAIN FUNCTION WITH DOC READY
 $(function () {
     myGame.gameInit();
 
-    //STYLING
+    //STYLING ON CLICK
     $(".instruction-slide").on("click", function () {
         $(".instructions").animate({
             "width": "4rem"
@@ -685,7 +689,9 @@ $(function () {
 
 
     });
-    //STYLING
+
+
+    //STYLING ON CLICK
     $("#name-submit").on("click", function () {
 
         $(".right-header").animate({
@@ -701,13 +707,13 @@ $(function () {
             "z-index": "50"
         });
 
-        // $(".question-block").animate({
-        //     "opacity": "1"
-        // }, 700);
+        $(".question-block").animate({
+            "opacity": "1"
+        }, 700);
     });
 
+// JAVASCRIPT MEDIA QUERIES
     if (window.matchMedia("(max-width: 550px)").matches) {
-        /* The viewport is less than, or equal to, 700 pixels wide */
         $('.instruction-slide').on('click', function () {
             $('.instructions').animate({ 'height': '20vh' });
 
@@ -718,12 +724,24 @@ $(function () {
 
                 $('.question-block').animate({
                         'opacity': '1'
-                    }, 500).delay(5000);
+                }, 500)
             })
         });
 
         $('.generation').on('click', function () { 
-            $(".question-block").css("height", "28vh").css("padding", "5px");
+                    // .css({ 'transform': 'translateY(9rem)' });
+            $(".question-block").animate({ "height": "30vh" },'slow').css({ "padding": "5px" }).css({ 'transform': 'translateY(11vh)' }).css({ 'display': 'flex' }).css({ 'flex-direction': 'column' }).css({ 'justify-content': 'center' }); 
+        })
+    }
+
+    if (window.matchMedia("(max-width: 400px)").matches) {
+        $('#name-submit').on('click', function () {
+            // $('.right-header').animate({ 'height': '10vh' }, 200).css({ 'padding': '4vh 0px 0px 28%' });
+
+            $('.question-block').animate({
+                'opacity': '1'
+            }, 500).delay(10000)
+                .css({ 'transform': 'translateY(12rem)' });
         })
     }
 })

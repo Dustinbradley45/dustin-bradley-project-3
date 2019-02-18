@@ -153,7 +153,7 @@ input::-moz-focus-inner {
   visibility: hidden;
   display: block;
   font-size: 0;
-  content: '';
+  content: "";
   clear: both;
   height: 0; }
 
@@ -174,6 +174,10 @@ html {
 
 .wrong-class {
   background-color: red; }
+
+p, ul {
+  padding: 0;
+  margin: 0; }
 
 .next-round {
   font-size: 1rem;
@@ -220,7 +224,7 @@ header {
 
 h1 {
   width: 100%;
-  font-family: "Permanent Marker", cursive;
+  font-family: "Inconsolata", monospace;
   color: #e39e21;
   letter-spacing: 1.5px;
   margin: 0 auto; }
@@ -235,27 +239,34 @@ h1 {
 .instructions {
   width: 100%;
   height: 100vh;
-  padding: 2.2rem;
-  color: #f1faff;
+  padding: 1.5rem;
   top: 10%;
   z-index: 20;
-  letter-spacing: 1.2px;
   background-color: #202f3e;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b4856' fill-opacity='0.33'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  border: 2px solid #202f3e;
-  text-align: center;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b4856' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: relative; }
+  .instructions .instruction-box {
+    color: #202f3e;
+    letter-spacing: 1.2px;
+    text-align: center;
+    background-color: rgba(213, 147, 27, 0.8);
+    padding: 3.5rem 0;
+    width: 40%;
+    font-family: "karla", sans-serif; }
   .instructions button {
-    color: #e39e21;
+    color: #f1faff;
     padding: 10px;
-    background-color: #202f3e;
-    border: none; }
+    border: none;
+    background: none; }
     .instructions button:hover, .instructions button:focus {
-      border: 1px solid #f1faff; }
+      border-bottom: 1px solid #202f3e; }
+
+.instruction-box h2 {
+  color: #f1faff; }
 
 .icon-box {
   display: block;
@@ -305,7 +316,7 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-top: 25%;
-    font-family: "Metrophobic", sans-serif;
+    font-family: "karla", sans-serif;
     color: #f1faff;
     border: 2px solid #3b4856;
     font-size: 1rem;
@@ -331,30 +342,15 @@ h1 {
       margin-top: 1rem;
       text-decoration: none;
       color: #e39e21;
-      font-family: "Metrophobic", sans-serif; }
+      font-family: "karla", sans-serif; }
 
 .good-luck-message {
-  font-family: "Metrophobic", sans-serif;
+  font-family: "karla", sans-serif;
   color: #202f3e;
   font-size: 1.2rem;
   position: relative;
   bottom: 2rem;
   right: 3rem; }
-
-.right-page-form {
-  position: relative; }
-
-.popup-modal {
-  position: absolute;
-  text-align: center;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(241, 250, 255, 0.3); }
-  .popup-modal .popup-info {
-    margin-top: 25%; }
 
 .flex-wrapper {
   display: flex;
@@ -413,11 +409,11 @@ main {
   border: none;
   background-color: #202f3e;
   color: #e39e21;
-  font-family: "Metrophobic", sans-serif; }
+  font-family: "karla", sans-serif; }
 
 .question-block {
   width: 50%;
-  height: 65vh;
+  height: 58vh;
   border: 2px solid #3b4856;
   background-color: #e39e21;
   margin-bottom: 20px;
@@ -425,8 +421,8 @@ main {
   text-align: center;
   opacity: 0; }
   .question-block .lyrics {
-    font-size: 2rem;
-    font-family: "Metrophobic", sans-serif;
+    font-size: 1.3rem;
+    font-family: "karla", sans-serif;
     padding: 0 2rem; }
 
 .question-container {
@@ -451,15 +447,45 @@ main {
   0% {
     background-image: linear-gradient(); } }
 
+.right-page-form {
+  position: relative; }
+
+.user-score {
+  background: #202f3e;
+  font-family: "karla", sans-serif;
+  width: 50%;
+  margin: 0 auto;
+  color: #e39e21;
+  padding: 2.5rem;
+  border: 2px solid #3b4856;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000; }
+  .user-score button {
+    width: 70%;
+    background-color: #e39e21;
+    color: #202f3e;
+    margin: 1rem;
+    padding: 0.8rem; }
+    .user-score button:hover {
+      background-color: green; }
+
 @media only screen and (max-width: 850px) {
   .question-block {
     width: 70%; }
   .header-inside {
     margin: 0 2rem; }
   .possible-answers {
-    width: 76%; }
-  .counter {
-    width: 15%; } }
+    width: 76%; } }
+
+.counter {
+  width: 15%; }
+
+.instructions .instruction-box {
+  width: 77%; }
 
 @media only screen and (max-width: 700px) {
   .header-inside {
@@ -471,34 +497,47 @@ main {
 @media only screen and (max-width: 550px) {
   .question-block {
     width: 100%;
-    padding: 10px; }
+    padding: 10px;
+    transform: translateY(9rem);
+    border: none; }
+  .right-header {
+    width: 100%;
+    transform: none; }
+    .right-header form {
+      top: 4rem;
+      padding: 0;
+      width: 100%;
+      background-color: rgba(32, 47, 62, 0.9);
+      height: 60vh; }
   .possible-answers {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%; }
-    .possible-answers > div {
+    width: 100%;
+    margin-top: 7rem; }
+    .possible-answers > button {
       width: 100%;
       margin: 12px 0;
       text-align: center;
-      height: 62px;
-      padding: 2px; }
+      height: 3rem;
+      padding: 6px; }
+  .next-question {
+    transform: translateY(-500px); }
   .lyrics {
     font-size: 1.4rem;
     padding: 10px; }
   .instructions {
     width: 100%;
-    height: 50vh; }
-  .right-header {
-    width: 100%;
-    transform: none; }
-    .right-header form {
-      padding-top: 36%; }
+    height: 100vh; }
+    .instructions .instruction-box {
+      width: 100%; }
   .flex-this {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
+  .right-page-form {
+    width: 100%; }
   main {
     height: 84vh; } }

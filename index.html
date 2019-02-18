@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>project3</title>
-    <link href="https://fonts.googleapis.com/css?family=Metrophobic|Permanent+Marker" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Metrophobic|Permanent+Marker" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Karla:400,700" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
-    <header  >
+    <header>
         <section>
             <div class="header-content">
-                <div class='header-inside'>
+                <div class="header-inside">
                     <div class="header-title ">
                         <h1>Who Sang It?</h1>
                     </div>
                     <div class="counter">
-                        <p class='number-add'>0</p>
+                        <p class="number-add">0</p>
                     </div>
                 </div>
             </div>
@@ -26,18 +27,18 @@
         <div class="flex-this">
             <section class="instructions">
                 <div class="instruction-box">
-                    <h2 class='slide-header'>Instructions:</h2>
+                    <h2 class="slide-header">Instructions:</h2>
                     <p>Choose what lyrics are and guess the artist. Each generation has ten questions.</p>
-                    <button class='instruction-slide'>Got it!</button>
+                    <button class="instruction-slide">Got it!</button>
                 </div>
-                <span class='icon-box' role='button'></span>
+                <span class="icon-box" role="button"></span>
             </section>
-            <section class='right-page-form'>
+            <section class="right-page-form">
                 <div class="right-header">
                     <form action="">
                         <label for="name">Enter In Your First Name</label>
-                        <input type="name" id='name-input'>
-                        <a href="#main-game" id='name-submit'>Lets Play!</a>
+                        <input type="name" id="name-input">
+                        <a href="#main-game" id="name-submit">Lets Play!</a>
                     </form>
                 </div>
             </section>
@@ -47,19 +48,19 @@
 
         </div>
     </header>
-   <main  id='main-game'>
+   <main  id="main-game">
        </div>
        <div class="flex-wrapper">
-            <section class='question-block'>
+            <section class="question-block">
                 <div class="question-container">
                     <!-- CANNOT KABOB CASE THESE IDS AS THEY ARE WHAT LINKS MY ARRAY TO THIS BUTTON -->
-                    <button class="generation eighties" id='eightiesSongs'>
+                    <button class="generation eighties" id="eightiesSongs">
                        80s
                     </button>
-                    <button class="generation nineties" id='ninetiesSongs'>
+                    <button class="generation nineties" id="ninetiesSongs">
                         90s
                     </button>
-                    <button class="generation thousands" id='thousandsSongs'>
+                    <button class="generation thousands" id="thousandsSongs">
                      00s
                     </button>
                     
@@ -67,23 +68,23 @@
                 </div>
             </section>
             <div class="next-question">
-                <button class='hide-me'>Next Question</button>
+                <button class="hide-me">Next Question</button>
             </div>
-            <section class='possible-answers'>
-                <button class="answer-box-1 answer-block hide-me answer-background" role='button' tabindex=0 aria-pressed="false">
+            <section class="possible-answers">
+                <button class="answer-box-1 answer-block hide-me answer-background" role="button" tabindex=0 aria-pressed="false">
 
                         <!-- GOING TO APPEND POSSIBLE ANSWERS HERE -->
                 </button>
-                <button class="answer-box-2 answer-block hide-me answer-background" role='button' tabindex=0>
+                <button class="answer-box-2 answer-block hide-me answer-background" role="button" tabindex=0>
 
                     <!-- GOING TO APPEND POSSIBLE ANSWERS HERE -->
 
                 </button>
-                <button class="answer-box-3 answer-block hide-me answer-background" role='button' tabindex=0>
+                <button class="answer-box-3 answer-block hide-me answer-background" role="button" tabindex=0>
 
                     <!-- GING TO APPEND POSSIBLE ANSWERS HERE -->
                 </button>
-                <button class="answer-box-4 answer-block hide-me answer-background" role='button' tabindex=0>
+                <button class="answer-box-4 answer-block hide-me answer-background" role="button" tabindex=0>
                     <!-- APPEND POSSIBLE ANSWERS HERE -->
                 </button>
             </section>
@@ -92,6 +93,6 @@
    </main>
 
 </body>
-<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
 <script src="./scripts.js"></script>
 </html>

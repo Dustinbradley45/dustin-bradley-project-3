@@ -1,0 +1,29 @@
+.right-page-form {
+    position: relative;
+}
+
+.user-score {
+    background: $primary-color;
+    font-family: $primary-font;
+    width: 50%;
+    margin: 0 auto;
+    color: $secondary-color;
+    padding: 2.5rem;
+    border: 2px solid $primary-font-color;
+    text-align: center;
+    @include display-flex(column, center, center);
+    z-index: 5000;
+
+    button {
+        width: 70%;
+        background-color: $secondary-color;
+        color: $primary-color;
+        margin: 1rem;
+        padding: 0.8rem;
+
+
+        &:hover {
+            background-color: green;
+        }
+    }
+}

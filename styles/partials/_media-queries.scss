@@ -1,11 +1,11 @@
-// $lg-desktop: 'only screen and (max-width: 1440px)';
-// $med-desktop: 'only screen and (max-width: 1280px)';
-// $lg-tablet: 'only screen and (max-width:1000px)';
-// $med-tablet: 'only screen and (max-width: 850px)';
-// $sm-tablet: 'only screen and (max-width: 800px)';
-// $lg-phone: 'only screen and (max-width: 700px)';
-// $med-phone: 'only screen and (max-width: 550px)';
-// $sm-phone: 'only screen and (max-width: 350px)';
+// $lg-desktop: "only screen and (max-width: 1440px)";
+// $med-desktop: "only screen and (max-width: 1280px)";
+// $lg-tablet: "only screen and (max-width:1000px)";
+// $med-tablet: "only screen and (max-width: 850px)";
+// $sm-tablet: "only screen and (max-width: 800px)";
+// $lg-phone: "only screen and (max-width: 700px)";
+// $med-phone: "only screen and (max-width: 550px)";
+// $sm-phone: "only screen and (max-width: 350px)";
 
 @media #{$med-tablet} {
 
@@ -20,8 +20,17 @@
       
     }
 
-    .counter{
-        width:15%;
+}
+
+.counter{
+    width:15%;
+}
+
+.instructions {
+
+    .instruction-box{
+        width: 77%;
+
     }
 
 }
@@ -43,20 +52,41 @@
     .question-block {
         width:100%;
         padding:10px;
+        transform:translateY(9rem);
+        border:none;
 
     }
+
+    .right-header {
+            width:100%;
+            transform: none;
+
+        form {
+            top:4rem;
+            padding:0;
+            width: 100%;
+            background-color: rgba($primary-color, .9);
+            height:60vh;
+        }
+    }
+
 
     .possible-answers {
         @include display-flex(column, center, center);
         width:100%;
+        margin-top:7rem;
 
-        & > div {
+        & > button {
             width:100%;
             margin: 12px 0;
             text-align:center; 
-            height: 62px;
-            padding:2px; 
+            height: 3rem;
+            padding:6px; 
         }
+    }
+
+    .next-question {
+        transform:translateY(-500px);
     }
 
     .lyrics {
@@ -66,21 +96,20 @@
 
     .instructions {
         width:100%;
-        height: 50vh;
-    }
+        height:100vh;
+        
 
-    .right-header {
-        width:100%;
-        transform: none;
-
-
-        form {
-            padding-top:36%;
+        .instruction-box {
+            width:100%;
         }
     }
 
+
     .flex-this {
         @include display-flex(column, center, center);
+    }
+    .right-page-form {
+        width:100%;
     }
 
     main {

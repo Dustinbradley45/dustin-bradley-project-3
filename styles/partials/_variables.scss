@@ -8,9 +8,16 @@ $secondary-font-color: #f1faff;
 
 //FONTS
 
+//  STANDARD @IMPORT 
 
-$secondary-font: 'Permanent Marker', cursive;
-$primary-font: 'Metrophobic', sans-serif;
+// font-family: "Inconsolata",
+// monospace;
+
+// font-family: "Karla",
+// sans-serif;
+
+$secondary-font: "Inconsolata", monospace;
+$primary-font: "karla", sans-serif;
 
 //MIXINS
 
@@ -21,14 +28,14 @@ $primary-font: 'Metrophobic', sans-serif;
     align-items:$align;
     
 }
-$lg-desktop: 'only screen and (max-width: 1440px)';
-$med-desktop: 'only screen and (max-width: 1280px)';
-$lg-tablet: 'only screen and (max-width:1000px)';
-$med-tablet: 'only screen and (max-width: 850px)';
-$sm-tablet: 'only screen and (max-width: 800px)';
-$lg-phone: 'only screen and (max-width: 700px)';
-$med-phone: 'only screen and (max-width: 550px)';
-$sm-phone: 'only screen and (max-width: 350px)';
+$lg-desktop: "only screen and (max-width: 1440px)";
+$med-desktop: "only screen and (max-width: 1280px)";
+$lg-tablet: "only screen and (max-width:1000px)";
+$med-tablet: "only screen and (max-width: 850px)";
+$sm-tablet: "only screen and (max-width: 800px)";
+$lg-phone: "only screen and (max-width: 700px)";
+$med-phone: "only screen and (max-width: 550px)";
+$sm-phone: "only screen and (max-width: 350px)";
 
 
 

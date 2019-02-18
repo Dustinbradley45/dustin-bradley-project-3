@@ -1,3 +1,5 @@
+
+
 .wrapper {
     margin:0 auto;
     max-width: 1280px;
@@ -9,6 +11,11 @@
 
 .wrong-class {
     background-color:red;
+}
+
+p, ul {
+    padding:0;
+    margin:0;
 }
 
 .next-round {

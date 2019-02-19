@@ -4,440 +4,458 @@ const gameVal = {
     eightiesSongs: [
         song = {
             id: 1,
-            artist: "New Order",
-            album: "N/A",
-            year: 1983,
-            lyrics: "How does it feel / To treat me like you do?",
+            title: "Kiss",
+            artist: "Prince & The Revolution",
+            album: "Kiss / Love or Money",
+            year: 1986,
+            lyrics: "You don't have to be cool to rule my world",
             otherAnswers: [
-                "Stone Roses",
-                "The Smiths",
-                "New Order",
-                "The Pixies"
+                "Michael Jackson",
+                "David Bowie",
+                "Prince & The Revolution",
+                "Whitney Houston"
             ]
         },
         song = {
             id: 2,
+            title: "This must be the Place (Naive Melody)",
             artist: "Talking Heads",
             album: "Speaking in Tongues",
             year: 1983,
             lyrics: "I feel numb, burn with a weak heart / I guess I must be having fun",
             otherAnswers: [
-                "The Smiths",
+                "Ramones",
                 "Talking Heads",
-                "Michael jackson",
-                "Jesus and Mary"
+                "Roxy Music",
+                "Bryan Eno"
             ]
         },
         song = {
             id: 3,
-            artist: "The Cure",
-            album: "The Head on the Door",
+            title: "Walk like an Egyptian",
+            artist: "The Bangles",
+            album: "Different Light",
             year: 1985,
-            lyrics: "If only I was sure / that my head on the door was a dream",
+            lyrics: "All the bazaar men by the Nile / They got the money on a bet",
             otherAnswers: [
-                "The Smiths",
-                "The Cure",
-                "Michael jackson",
-                "The Pixies"
+                "The Bangles",
+                "The Go-Go's",
+                "Cyndi Lauper",
+                "The Runaways"
             ]
         },
         song = {
             id: 4,
-            artist: "The Specials",
-            album: "N/A",
-            year: 1981,
-            lyrics: "We danced and sang, and the music played in a de boomtown",
+            title: "Whip It",
+            artist: "DEVO",
+            album: "Freedom of CHoice",
+            year: 1980,
+            lyrics: "Give the past then slip / Step on a crack / Break your momma's back",
             otherAnswers: [
-                "The Smiths",
-                "Stone Roses",
-                "The Specials",
-                "The Pixies"
+                "Duran Duran",
+                "Billy Idol",
+                "The Pretenders",
+                "DEVO"
             ]
         },
         song = {
             id: 5,
-            artist: "Grace Jones",
-            album: "Nightclubbin\"",
-            year: 1981,
-            lyrics: "Driving down those city streets / Waiting to get down / Won\"t you get your big machine / Somewhere in this town ?",
+            title: "Quiche Lorraine",
+            artist: "B- 52's",
+            album: "Wild Planet",
+            year: 1980,
+            lyrics: "Quiche La Poodle is her name / And having a good time on a crummy day is our game",
             otherAnswers: [
-                "The Smiths",
+                "The Clash",
                 "Grace Jones",
-                "Michael jackson",
-                "The Pixies"
+                "B-52's",
+                "R.E.M."
             ]
         },
         song = {
             id: 6,
-            artist: "The Jesus and Mary Chain",
-            album: "Darklands",
-            year: 1987,
-            lyrics: "Hey honey what you trying to say / As I stand here / Don\"t you walk away",
+            title:"Modern Love",
+            artist: "David Bowie",
+            album: "Let's Dance",
+            year: 1983,
+            lyrics: "There's no sign of life / It's just the power to charm",
             otherAnswers: [
-                "The Smiths",
-                "Stone Roses",
-                "The Jesus and Mary Chain",
-                "The Pixies"
+                "Queen",
+                "George Michael",
+                "David Bowie",
+                "Elton John"
             ]
         },
         song = {
             id: 7,
+            title: "Debaser",
             artist: "The Pixies",
             album: "Doolittle",
             year: 1989,
             lyrics: "Got me a movie / I want you to know / Slicing up eyeballs / I want you to know",
             otherAnswers: [
-                "The Smiths",
-                "Stone Roses",
-                "Michael jackson",
+                "Sonic Youth",
+                "The Breeders",
+                "The Velvet Underground",
                 "The Pixies"
             ]
         },
         song = {
             id: 8,
+            title="This Charming Man",
             artist: "The Smiths",
             album: "The Smiths",
             year: 1983,
             lyrics: "This man said, 'It's gruesome / That someone so handsome should care",
             otherAnswers: [
                 "The Smiths",
-                "Stone Roses",
-                "Michael jackson",
-                "The Pixies"
+                "The Cure",
+                "Joy Division",
+                "The Stone Roses"
             ]
         },
         song = {
             id: 9,
-            artist: "The Sugarcubes",
-            album: "Life\"s Too Good",
-            year: 1988,
-            lyrics: "Today is her birthday / They\"re smoking cigars / He got a chain of flowers / And Sews a bird in her knickers",
+            title: "I'm On Fire",
+            artist: "Bruce Springsteen",
+            album: "Born In the U.S.A.",
+            year: 1984,
+            lyrics: "At night I wake up with the sheets soaking wet / And a freight train running through the middle of my head",
             otherAnswers: [
-                "The Smiths",
-                "Stone Roses",
-                "The Sugarcubes",
-                "The Pixies"
+                "Neil Young",
+                "Bob Dylan",
+                "Bruce Springsteen",
+                "Eric Clapton"
             ]
         },
         song = {
             id: 10,
-            artist: "The Clash",
-            album: "Combat Rock",
-            year: 1982,
-            lyrics: "Now the king told the boogie men / You have to / let that raga drop / The oil down the desert way / Has been shakin\" to the top",
+            title: "Call Me",
+            artist: "Blondie",
+            album: "Autoamerican",
+            year: 1980,
+            lyrics: "Cover me with kisses, baby / Cover me with love",
             otherAnswers: [
                 "Madonna",
                 "Patti Smith",
-                "Echo & the Bunnymen",
-                "The Clash"
+                "Blondie",
+                "Iggy Pop"
             ]
         }
     ],
     ninetiesSongs: [
         song = {
             id: 1,
-            artist: "No Doubt",
-            album: "",
-            year: 1995,
-            lyrics: "I\"m just a girl, guess I\"m some kind of freak, \"cause they all sit and stare with their eyes",
+            title: "Doo Wop (That Thing)",
+            artist: "Lauryn Hill",
+            album: "The Miseducation of Lauryn Hill",
+            year: 1998,
+            lyrics: "Yo, it's about a thing / If ya feel real good wave your hands in the air",
             otherAnswers: [
-                "Pearl Jam",
-                "Radiohead",
-                "Nirvana",
-                "Mariah Carey",
+                "Erykah Badu",
+                "Mary J. Blige",
+                "Lauryn Hill",
+                "Missy Elliott",
 
             ]
         },
         song = {
             id: 2,
-            artist: "Beastie Boys",
-            album: "Ill Communication",
-            year: 1994,
-            lyrics: "Said, son, you\'d better listen / Stuck in your ass is an electrician",
+            title: "Lovefool",
+            artist: "The Cardigans",
+            album: "First Band on the Moon",
+            year: 1996,
+            lyrics: "Dear, I fear we're facing a problem / You love me no longer, I know",
             otherAnswers: [
-                "Ice Cube",
-                "Fatboy Slim",
-                "Beastie Boys",
-                "Cypress Hill",
-
+                "Garbage",
+                "The Cardigans",
+                "Natalie Imbruglia",
+                "The Cranberries",
             ]
-
         },
         song = {
             id: 3,
-            artist: "R.E.M.",
-            album: "Out of Time",
-            year: 1991,
-            lyrics: "I thought that I heard you laughing /I thought that I heard you sing / I think thought I saw you try",
+            title: "All That She Wants",
+            artist: "Ace of Base",
+            album: "The Sign",
+            year: 1992,
+            lyrics: "All that she wants is another baby / She's gone tomorrow boy",
             otherAnswers: [
-                "R.E.M.",
-                "Janes Addiction",
-                "Oasis",
-                "Third Eye Blind",
-
+                "Roxette",
+                "ABBA",
+                "Bananarama",
+                "Ace of Base",
             ]
 
         },
         song = {
             id: 4,
-            artist: "BLACKstreet",
-            album: "Another Level",
-            year: 1996,
-            lyrics: "She\"s got class and style / Street knowledge by the pound",
+            title: "Saturday Night",
+            artist: "Whigfield",
+            album: "Whigfield",
+            year: 1995,
+            lyrics: "I'll make you mine, you know i'll take you to the top",
             otherAnswers: [
-                "Salt-N-Peppa",
-                "Vanilla Ice",
-                "Notorious B.I.G.",
-                "BLACKstreet",
+                "Aqua",
+                "Whigfield",
+                "Robyn",
+                "Jewel",
 
             ]
 
         },
         song = {
             id: 5,
-            artist: "Hanson",
-            album: "Middle of Nowhere",
-            year: 1997,
-            lyrics: "Plant a seed, plant a flower, plant a rose / You can plant any one of those / Keep planting to find out which one grows/ It\"s a secret no one knows",
+            title:"Cannonball",
+            artist: "The Breeders",
+            album: "Last Splash",
+            year: 1993,
+            lyrics: "Spitting in a wishing well / Blown to hell / Crash / On the last splash ",
             otherAnswers: [
-                "testing1",
-                "testing2",
-                "testing3",
-                "testing4",
+                "Tori Amos",
+                "Bikini Kill",
+                "Sonic Youth",
+                "The Breeders",
 
             ]
 
         },
         song = {
             id: 6,
-            artist: "Beck",
-            album: "Mellow Gold",
-            year: 1994,
-            lyrics: "With the plastic eyeballs / Spray-paint the vegetables / Dog food stalls with the beefcake pantyhose",
+            title: "Down by the Water",
+            artist: "PJ Harvey",
+            album: "To Bring You My Love",
+            year: 1995,
+            lyrics: "I lost my heart / Under the Bridge / To that little girl",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Nick Cave",
+                "PJ Harvey",
+                "Kate Bush",
+                "Portishead",
 
             ]
 
         },
         song = {
             id: 7,
-            artist: "Hole",
-            album: "Live Through This",
-            year: 1994,
-            lyrics: "I want to be the girl with the most cake / I love him so much it just turns to hate",
+            artist: "Radiohead",
+            album: "OK Computer",
+            year: 1997,
+            lyrics: "Arrest this girl / Her Hitler hairdo / Is making me feel ill",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Radiohead",
+                "Oasis",
+                "Nirvana",
+                "Red Hot Chili Peppers",
 
             ]
 
         },
         song = {
             id: 8,
-            artist: "Len",
-            album: "You Can\"t Stop the Bum Rush",
-            year: 1999,
-            lyrics: "My mind was thugged / all laced and bugged / all twisted wrong and beat / A comfortable three feet deep / Now the fuzzy stare from not being there on a confusing morning week / Impaired my tribal lunar speak",
+            title:"Big Time Sensuality",
+            artist: "Björk",
+            album: "Debut",
+            year: 1993,
+            lyrics: "I can sense it / Something important is about to happen",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Kate Bush",
+                "Björk",
+                "Massive Attack",
+                "Nine Inch Nails",
 
             ]
 
         },
         song = {
             id: 9,
-            artist: "Deee-Lite",
-            album: "World Clique",
-            year: 1990,
-            lyrics: "Your groove, I do deeply dig/ No walls, only the bridge/ My supper dish/ My succotash wish",
+            title: "Show me Love",
+            artist: "Robyn",
+            album: "Robyn is Here",
+            year: 1995,
+            lyrics: "Don't waste this love I wanna give it to you /  Tell me what you got",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
-
+                "Neneh Cherry",
+                "Beyonce",
+                "Robyn",
+                "Jewel",
             ]
 
         },
         song = {
             id: 10,
-            artist: "LFO",
-            album: "LFO",
-            year: 1999,
-            lyrics: "Cherry pants Coke / Crushed rocks till I boogie / Used to hate school / So I had to play hookie ",
+            title: "Glory Box",
+            artist: "Portishead",
+            album: "Dummy",
+            year: 1994,
+            lyrics: "I'm so tired of playing / Playing with this bow and arrow / Gonna give me heart away",
             otherAnswers: [
-                "test1",
-                "test2",
-                "test3",
-                "test4",
-
+                "Goldfrapp",
+                "Tricky",
+                "Portishead",
+                "Cocteau Twins",
             ]
-
         }
     ],
     thousandsSongs: [
         song = {
             id: 1,
-            artist: "Hilary Duff",
-            album: "",
-            year: 20,
-            lyrics: "If the light is off, then it isn’t on",
+            title: "Get Low",
+            artist: "Lil Jon & the East Side Boyz",
+            album: "Kings Of Crunk",
+            year: 2002,
+            lyrics: "To the window, to the wall",
             otherAnswers: [
-                "Christina Aguilera",
-                "",
-                "",
-                "",
-
+                "Timbaland",
+                "Lil Jon & the East Side Boyz",
+                "Snoop Dog",
+                "50 Cent",
             ]
         },
         song = {
             id: 2,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title:"Hey There Delilah",
+            artist: "Plain White T's",
+            album: "All That We Needed",
+            year: 2005,
+            lyrics: "But, girl, tonight you look so pretty",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Colbie Caillat",
+                "Jason Mraz",
+                "Plain White T's",
+                "The All- American Rejects",
 
             ]
 
         },
         song = {
             id: 3,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title:"Toxic",
+            artist: "Britney Spears",
+            album: "In the Zone",
+            year: 2003,
+            lyrics: "Losing my head, spinnin' round and 'round' / Do you feel me now?",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Katy Perry",
+                "Britney Spears",
+                "Rihanna",
+                "Shakira",
 
             ]
 
         },
         song = {
             id: 4,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: "The Way I Are",
+            artist: "Timbaland",
+            album: "Shock Value",
+            year: 2007,
+            lyrics: "Oh, baby, it's alright now, / You ain't gotta flaunt for me",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "50 Cent",
+                "Britney Spears",
+                "Justin Timberlake",
+                "Timbaland",
 
             ]
 
         },
         song = {
             id: 5,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: "Señorita",
+            artist: "Justin Timberlake",
+            album: "Justified",
+            year: 2002,
+            lyrics: "He doesn't love ya, I can tell by his charm",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Justin Bieber",
+                "Justin Timberlake",
+                "Jay-Z",
+                "Bruno Mars",
 
             ]
 
         },
         song = {
             id: 6,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: "American Boy",
+            artist: "Estelle", 
+            album: "Shine",
+            year: 2008,
+            lyrics: "Take me to New York, I'd love to see L.A.",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Busta Rhymes",
+                "Rick Ross",
+                "Janelle Monáe",
+                "Estelle",
 
             ]
 
         },
         song = {
             id: 7,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: "Get Me Bodied",
+            artist: "Beyonce",
+            album: "B'Day",
+            year: 2006,
+            lyrics: "A little sweat ain't never hurt nobody",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Beyoncé",
+                "Lady Gaga",
+                "Rihanna",
+                "Christina Aguilera",
 
             ]
 
         },
         song = {
             id: 8,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: "Jenny from the Block",
+            artist: "Jennifer Lopez",
+            album: "This is Me...Then",
+            year: 2002,
+            lyrics: "I'm real even on Oprah / That's just me",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Shakira",
+                "Rihanna",
+                "Selena Gomez",
+                "Jennifer Lopez",
 
             ]
 
         },
         song = {
             id: 9,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: "Paper Planes",
+            artist: "M.I.A",
+            album: "Kala",
+            year: 2007,
+            lyrics: "If you catch me at the border, I got visas in my name",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "Santigold",
+                "Madonna",
+                "M.I.A",
+                "Kelis",
 
             ]
 
         },
         song = {
             id: 10,
-            artist: "",
-            album: "",
-            year: 20,
-            lyrics: "",
+            title: '15 Steps',
+            artist: "Radiohead",
+            album: "In Rainbows",
+            year: 2007,
+            lyrics: "How come I end up where I started / How come I end up where I went wrong",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "The Smashing Pumpkins",
+                "Radiohead",
+                "Arcade Fire",
+                "Arctic Monkeys",
             ]
         }
     ]
 }
-
-//NOTES: 1. PROBLEM WITH SCORING. Seems to be adding the previous score
-//2. TRYING TO END THIS GAME
-
 
 
 //START GAME NAMESPACE. THROW ALL METHODS ONTO myGame. 

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>project3 - Who Sang it?</title>
-    <!-- <link href="https://fonts.googleapis.com/css?family=Metrophobic|Permanent+Marker" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Inconsolata|Karla:400,700" rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
@@ -25,51 +25,45 @@
                 </div>
             </div>
         </section>
-        <div class="flex-this">
+        <div class="main-flex-container">
             <section class="instructions">
                 <div class="instruction-box">
                     <h2 class="slide-header">Instructions:</h2>
                     <p>Choose what lyrics are and guess the artist. Each generation has ten questions.</p>
-                    <button type=''class="instruction-slide">Got it!</button>
+                    <button type="button" class="instruction-slide">Got it!</button>
                 </div>
-                <span class="icon-box" role="button"></span>
+                <span class="icon-box" role="button" aria-hidden="true"></span>
             </section>
             <section class="right-page-form">
                 <div class="right-header">
-                    <form action="">
+                    <form action="#">
                         <label for="name">Enter In Your First Name</label>
                         <input type="name" id="name-input">
-                        <a href="#main-game" id="name-submit">Lets Play!</a>
+                        <a href="#" id="name-submit">Lets Play!</a>
                     </form>
                     <div class="no-name-popup">
                         <div class="popup-container">
-                            
                         </div>
                     </div>
                 </div>
             </section>
-
-           
-
-
         </div>
     </header>
-   <main  id="main-game">
-       </div>
-       <div class="flex-wrapper">
+    <main id="main-game">
+        <div class="flex-wrapper">
             <section class="question-block">
                 <div class="question-container">
                     <!-- CANNOT KABOB CASE THESE IDS AS THEY ARE WHAT LINKS MY ARRAY TO THIS BUTTON -->
                     <button class="generation eighties" id="eightiesSongs">
-                       80s
+                        80s
                     </button>
                     <button class="generation nineties" id="ninetiesSongs">
                         90s
                     </button>
                     <button class="generation thousands" id="thousandsSongs">
-                     00s
+                        00s
                     </button>
-                    
+
                     <!-- APPEND OR LYRICS HERE -->
                 </div>
             </section>
@@ -77,9 +71,8 @@
                 <button class="hide-me">Next Question</button>
             </div>
             <section class="possible-answers">
-                <button class="answer-box-1 answer-block hide-me answer-background" role="button" tabindex=0 aria-pressed="false">
-
-                        <!-- GOING TO APPEND POSSIBLE ANSWERS HERE -->
+                <button class="answer-box-1 answer-block hide-me answer-background" role="button" tabindex=0>
+                    <!-- GOING TO APPEND POSSIBLE ANSWERS HERE -->
                 </button>
                 <button class="answer-box-2 answer-block hide-me answer-background" role="button" tabindex=0>
 
@@ -94,11 +87,12 @@
                     <!-- APPEND POSSIBLE ANSWERS HERE -->
                 </button>
             </section>
-            
         </div>
-   </main>
-
+    </main>
 </body>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
 <script src="./scripts.js"></script>
+
 </html>

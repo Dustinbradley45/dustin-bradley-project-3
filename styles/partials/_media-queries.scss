@@ -1,26 +1,18 @@
-// $lg-desktop: "only screen and (max-width: 1440px)";
-// $med-desktop: "only screen and (max-width: 1280px)";
-// $lg-tablet: "only screen and (max-width:1000px)";
-// $med-tablet: "only screen and (max-width: 850px)";
-// $sm-tablet: "only screen and (max-width: 800px)";
-// $lg-phone: "only screen and (max-width: 700px)";
-// $med-phone: "only screen and (max-width: 550px)";
-// $sm-phone: "only screen and (max-width: 400px)";
+@media #{lg-desktop} {
+    .question-block {
+        width:50%;
+        height: 49vh;
+        margin-top: 9rem;
+    }
+}
 
 @media #{$med-desktop} {
     main {
         margin-top: 19%;
     }
-
 }
 
 @media #{$lg-tablet} {
-    .right-header {
-        // form {
-        //     width: 70%;
-        // }
-    }
-
 
     .question-block {
         margin: 2% 0 0 4%;
@@ -37,22 +29,8 @@
 
 @media #{$med-tablet} {
 
-    .question-block {
-        width: 70%;
-        margin-top: 4%;
-    }
-
     .header-inside {
         margin: 1.1rem 2rem;
-    }
-
-    .possible-answers {
-        width: 76%;
-
-    }
-
-    .user-score {
-        margin-left:18%;
     }
 
     .counter {
@@ -68,9 +46,23 @@
 
     }
 
+    .question-block {
+        width: 70%;
+        margin-top: 4%;
+    }
+
+    .possible-answers {
+        width: 76%;
+
+    }
+
     .user-score {
+        margin-left: 18%;
         width: 70%;
     }
+
+
+
 }
 
 @media #{$sm-tablet} {
@@ -92,8 +84,7 @@
 
     .question-block {
         width: 73%;
-        margin-top: 13%;
-        margin-left: 12%;
+        margin: 13% 0 0 12%;
     }
 
     .next-question {
@@ -109,9 +100,10 @@
     }
 
     .right-header {
+
         form {
+            width: 70%;
             margin-left: 21%;
-            width:70%;
         }
     }
 }
@@ -119,16 +111,16 @@
 @media #{$med-phone} {
 
     main {
-        margin-top:0;
+        margin-top: 0;
     }
 
     .question-block {
         width: 100%;
+        height: 67vh;
+        margin-left: 0;
         padding: 10px;
         transform: translateY(7rem);
         border: 1px solid $primary-color;
-        height: 67vh;
-        margin-left:0;
 
     }
 
@@ -137,22 +129,22 @@
         transform: none;
 
         form {
-            top: 4rem;
-            padding: 0;
             width: 100%;
-            background-color: rgba($primary-color, .9);
             height: 60vh;
-            margin-left:0;
+            top: 4rem;
+            margin-left: 0;
+            padding: 0;
+            background-color: rgba($primary-color, .9);
         }
     }
 
 
     .possible-answers {
-        @include display-flex(column, center, center);
         width: 100%;
+        @include display-flex(column, center, center);
         transform: tranlateY(-2rem);
-        margin-left:0;
-        // margin-top:1.5rem;
+        margin-left: 0;
+        margin-top:2rem;
 
         &>button {
             width: 100%;
@@ -164,8 +156,7 @@
     }
 
     .next-question {
-        margin-top: 35%;
-        margin-left:0;
+        margin: 37% 0 0 0;
     }
 
     .lyrics {
@@ -173,18 +164,7 @@
         padding: 10px;
     }
 
-    // .instructions {
-    //     width: 100%;
-    //     height: 100vh;
-
-
-    //     .instruction-box {
-    //         width: 100%;
-    //     }
-    // }
-
-
-    .flex-this {
+    .main-flex-container {
         @include display-flex(column, center, center);
     }
 
@@ -199,7 +179,7 @@
     .user-score {
         width: 100%;
         transform: translateY(-4rem);
-        margin:0;
+        margin: 0;
     }
 }
 
@@ -207,7 +187,7 @@
 
     .question-block {
         transform: translateY(7rem);
-       
+
     }
 
     .good-luck-message {

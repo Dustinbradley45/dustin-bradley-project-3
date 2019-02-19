@@ -1,48 +1,48 @@
-
+body {
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: $primary-color;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b4856' fill-opacity='0.33'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
 
 .wrapper {
-    margin:0 auto;
+    margin: 0 auto;
     max-width: 1280px;
 }
 
-.right-class {
-    background-color:green;
+.flex-wrapper {
+    @include display-flex(column, center, center);
+    margin: 0 auto;
+
 }
 
-.wrong-class {
-    background-color:red;
+
+p,
+ul {
+    padding: 0;
+    margin: 0;
 }
 
-p, ul {
-    padding:0;
-    margin:0;
+ul {
+    list-style: none;
 }
 
 .next-round {
+    margin-top: 2rem;
+    padding: 20px;
+    background-color: darken($primary-color, 5%);
+    border: 2px solid $primary-font-color;
     font-size: 1rem;
-    padding:20px;
-    background-color:darken($primary-color, 5%);
-    border:2px solid $primary-font-color;
     color: $secondary-font-color;
-    margin-top:10px;
     transition: .3s all linear;
 
     &:hover,
     &:focus-within {
-        background-color:$primary-color;
+        background-color: $primary-color;
         border: 2px solid $secondary-color;
     }
 }
 
 .next-question {
     margin-top: 0.5rem;
-}
-
-body{
-    max-height:100vh;
-    overflow: hidden;
-}
-
-ul {
-    list-style: none;
 }

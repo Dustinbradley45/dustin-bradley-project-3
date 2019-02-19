@@ -16,19 +16,22 @@ $secondary-font-color: #f1faff;
 // font-family: "Karla",
 // sans-serif;
 
-$secondary-font: "Inconsolata", monospace;
-$primary-font: "karla", sans-serif;
+$secondary-font: "Inconsolata",
+monospace;
+$primary-font: "karla",
+sans-serif;
 
 //MIXINS
 
-@mixin display-flex ($direction, $justify, $align){
-    display:flex;
-    flex-direction:$direction;
+@mixin display-flex ($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
     justify-content: $justify;
-    align-items:$align;
-    
+    align-items: $align;
+
 }
-$lg-desktop: "only screen and (max-width: 1440px)";
+
+$lg-desktop: "only screen and (max-width: 1600px)";
 $med-desktop: "only screen and (max-width: 1280px)";
 $lg-tablet: "only screen and (max-width:1000px)";
 $med-tablet: "only screen and (max-width: 850px)";

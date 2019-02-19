@@ -165,27 +165,38 @@ input::-moz-focus-inner {
 html {
   font-size: 125%; }
 
+body {
+  max-height: 100vh;
+  overflow: hidden;
+  background-color: #202f3e;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b4856' fill-opacity='0.33'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+
 .wrapper {
   margin: 0 auto;
   max-width: 1280px; }
 
-.right-class {
-  background-color: green; }
+.flex-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; }
 
-.wrong-class {
-  background-color: red; }
-
-p, ul {
+p,
+ul {
   padding: 0;
   margin: 0; }
 
+ul {
+  list-style: none; }
+
 .next-round {
-  font-size: 1rem;
+  margin-top: 2rem;
   padding: 20px;
   background-color: #17222d;
   border: 2px solid #3b4856;
+  font-size: 1rem;
   color: #f1faff;
-  margin-top: 10px;
   transition: .3s all linear; }
   .next-round:hover, .next-round:focus-within {
     background-color: #202f3e;
@@ -193,13 +204,6 @@ p, ul {
 
 .next-question {
   margin-top: 0.5rem; }
-
-body {
-  max-height: 100vh;
-  overflow: hidden; }
-
-ul {
-  list-style: none; }
 
 header {
   margin-bottom: 5%;
@@ -341,6 +345,9 @@ h1 {
       text-decoration: none;
       color: #e39e21;
       font-family: "karla", sans-serif; }
+      .right-header form a:hover, .right-header form a:focus-within {
+        border-bottom: 1px solid #f1faff;
+        padding-bottom: 10px; }
 
 .no-name-popup {
   background-color: rgba(32, 47, 62, 0.7);
@@ -365,17 +372,6 @@ h1 {
   position: relative;
   bottom: 2rem;
   right: 3rem; }
-
-.flex-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto; }
-
-body {
-  background-color: #202f3e;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b4856' fill-opacity='0.33'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
 
 main {
   position: absolute;
@@ -419,7 +415,7 @@ main {
 .block-me {
   display: block; }
 
-.generation {
+.next-level-gen {
   border: none;
   background-color: #202f3e;
   color: #e39e21;
@@ -438,6 +434,11 @@ main {
     font-size: 1.3rem;
     font-family: "karla", sans-serif;
     padding: 0 2rem; }
+  .question-block h3, .question-block li {
+    font-family: "karla", sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1.1px;
+    line-height: 1.5rem; }
 
 .question-container {
   display: flex;
@@ -451,15 +452,11 @@ main {
     margin: 20px;
     border: 2px solid #3b4856;
     transition: all .4s linear;
-    transform: scale(1); }
+    color: #f1faff;
+    background-color: #202f3e; }
     .question-container .generation:hover, .question-container .generation:focus-within {
       border: 2px solid #f1faff;
-      background-color: #3b4856;
-      transform: scale(1.1); }
-
-@keyframes change-color {
-  0% {
-    background-image: linear-gradient(); } }
+      background-color: #3b4856; }
 
 .right-page-form {
   position: relative; }
@@ -484,8 +481,15 @@ main {
     color: #202f3e;
     margin: 1rem;
     padding: 0.8rem; }
-    .user-score button:hover {
-      background-color: green; }
+    .user-score button:hover, .user-score button:focus-within {
+      background-color: #cc8c1a;
+      border: 1px solid #f1faff; }
+
+@media lg-desktop {
+  .question-block {
+    width: 50%;
+    height: 49vh;
+    margin-top: 9rem; } }
 
 @media only screen and (max-width: 1280px) {
   main {
@@ -500,20 +504,19 @@ main {
     margin-left: 29%; } }
 
 @media only screen and (max-width: 850px) {
-  .question-block {
-    width: 70%;
-    margin-top: 4%; }
   .header-inside {
     margin: 1.1rem 2rem; }
-  .possible-answers {
-    width: 76%; }
-  .user-score {
-    margin-left: 18%; }
   .counter {
     width: 15%; }
   .instructions .instruction-box {
     width: 77%; }
+  .question-block {
+    width: 70%;
+    margin-top: 4%; }
+  .possible-answers {
+    width: 76%; }
   .user-score {
+    margin-left: 18%;
     width: 70%; } }
 
 @media only screen and (max-width: 800px) {
@@ -528,8 +531,7 @@ main {
     width: 5%; }
   .question-block {
     width: 73%;
-    margin-top: 13%;
-    margin-left: 12%; }
+    margin: 13% 0 0 12%; }
   .next-question {
     margin-left: 12%; }
   .possible-answers {
@@ -537,37 +539,38 @@ main {
   .user-score {
     margin-left: 21%; }
   .right-header form {
-    margin-left: 21%;
-    width: 70%; } }
+    width: 70%;
+    margin-left: 21%; } }
 
 @media only screen and (max-width: 550px) {
   main {
     margin-top: 0; }
   .question-block {
     width: 100%;
+    height: 67vh;
+    margin-left: 0;
     padding: 10px;
     transform: translateY(7rem);
-    border: 1px solid #202f3e;
-    height: 67vh;
-    margin-left: 0; }
+    border: 1px solid #202f3e; }
   .right-header {
     width: 100%;
     transform: none; }
     .right-header form {
-      top: 4rem;
-      padding: 0;
       width: 100%;
-      background-color: rgba(32, 47, 62, 0.9);
       height: 60vh;
-      margin-left: 0; }
+      top: 4rem;
+      margin-left: 0;
+      padding: 0;
+      background-color: rgba(32, 47, 62, 0.9); }
   .possible-answers {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
     transform: tranlateY(-2rem);
-    margin-left: 0; }
+    margin-left: 0;
+    margin-top: 2rem; }
     .possible-answers > button {
       width: 100%;
       margin: 12px 0;
@@ -575,12 +578,11 @@ main {
       height: 3rem;
       padding: 6px; }
   .next-question {
-    margin-top: 35%;
-    margin-left: 0; }
+    margin: 37% 0 0 0; }
   .lyrics {
     font-size: 1.4rem;
     padding: 10px; }
-  .flex-this {
+  .main-flex-container {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -74,7 +74,7 @@ const gameVal = {
         },
         song = {
             id: 6,
-            title:"Modern Love",
+            title: "Modern Love",
             artist: "David Bowie",
             album: "Let's Dance",
             year: 1983,
@@ -102,7 +102,7 @@ const gameVal = {
         },
         song = {
             id: 8,
-            title:"This Charming Man",
+            title: "This Charming Man",
             artist: "The Smiths",
             album: "The Smiths",
             year: 1983,
@@ -206,7 +206,7 @@ const gameVal = {
         },
         song = {
             id: 5,
-            title:"Cannonball",
+            title: "Cannonball",
             artist: "The Breeders",
             album: "Last Splash",
             year: 1993,
@@ -238,6 +238,7 @@ const gameVal = {
         },
         song = {
             id: 7,
+            title:'Karma Police',
             artist: "Radiohead",
             album: "OK Computer",
             year: 1997,
@@ -253,7 +254,7 @@ const gameVal = {
         },
         song = {
             id: 8,
-            title:"Big Time Sensuality",
+            title: "Big Time Sensuality",
             artist: "Björk",
             album: "Debut",
             year: 1993,
@@ -314,7 +315,7 @@ const gameVal = {
         },
         song = {
             id: 2,
-            title:"Hey There Delilah",
+            title: "Hey There Delilah",
             artist: "Plain White T's",
             album: "All That We Needed",
             year: 2005,
@@ -330,7 +331,7 @@ const gameVal = {
         },
         song = {
             id: 3,
-            title:"Toxic",
+            title: "Toxic",
             artist: "Britney Spears",
             album: "In the Zone",
             year: 2003,
@@ -379,7 +380,7 @@ const gameVal = {
         song = {
             id: 6,
             title: "American Boy",
-            artist: "Estelle", 
+            artist: "Estelle",
             album: "Shine",
             year: 2008,
             lyrics: "Take me to New York, I'd love to see L.A.",
@@ -557,7 +558,7 @@ myGame.gameReset = () => {
 
 //STORING USER NAME
 $("#name-submit").on("click", function (event) {
-    event.preventDefault();
+        event.preventDefault();
         return userName = $("#name-input").val();
 
     }
@@ -614,14 +615,14 @@ myGame.tryAgain = () => {
         $(".answer-block").children("p")
 
             .remove();
-        
+
 
         $(".answer-block").fadeIn("750");
 
         if ($(window).width() < 550) {
             $('.generation').on('click', function () {
 
-              
+
                 $('.right-header').css({
                     'height': '0'
                 }).css({
@@ -704,6 +705,11 @@ myGame.nextRound = () => {
 
 myGame.newGeneration = () => {
     $('.user-score').on('click', '.next-level-gen', function () {
+        console.log('cat')
+        $("main").animate({
+            "opacity": "1"
+        }, "fast").css({ 'z-index': '19' });
+        
         $('.user-score').hide();
 
         let chosenGeneration = $(this).attr("id")
@@ -711,9 +717,6 @@ myGame.newGeneration = () => {
 
         gameVal.roundCounter = 0;
 
-        $("main").animate({
-            "opacity": "1"
-        }, "fast");
     })
 }
 
@@ -724,8 +727,15 @@ myGame.gameInit = () => {
         let chosenGeneration = $(this).attr("id")
         myGame.decadeOfChoice = [chosenGeneration];
 
-
-        $(".question-block").css("height", "36vh").css("padding", "5px");
+        if ($(window).width() < 550) {
+              $('.question-block')
+                  .css({
+                      'height': '26%'
+                  }).css({'padding': '2rem'});
+        } else {
+            $(".question-block").css("height", "36vh").css("padding", "5px");
+            
+         }
 
 
         myGame.startQuestions();
@@ -740,117 +750,118 @@ myGame.gameInit = () => {
 
 //MAIN FUNCTION WITH DOC READY
 $(function () {
-    myGame.gameInit();
+        myGame.gameInit();
 
 
 
 
-    //STYLING ON FIRST INSTRUCTION BUTTON CLICK
-    $(".instruction-slide").on("click", function () {
-            
-        $(".instruction-box").empty()
+        //STYLING ON FIRST INSTRUCTION BUTTON CLICK
+        $(".instruction-slide").on("click", function () {
 
-        //WINDOW SPECIFIC SIZE QUERIES
-        if ($(window).width() > 550) {
+            $(".instruction-box").empty()
 
-            $(".icon-box").append(`
+            //WINDOW SPECIFIC SIZE QUERIES
+            if ($(window).width() > 550) {
+
+                $(".icon-box").append(`
             <span>
                 <div class="box-1"></div>
                 <div class="box-2"></div>
             </span>
             `).addClass("instruction-close").animate({
-                "opacity": "1"
-            }, "slow");
-        }
-        if ($(window).width() < 550) {
+                    "opacity": "1"
+                }, "slow");
+            }
+            if ($(window).width() < 550) {
 
 
-            $('.instructions').animate({
-                'width': '0 '
-            })
-                .animate({
-                    'height': '0'
+                $('.instructions').animate({
+                        'width': '0 '
+                    })
+                    .animate({
+                        'height': '0'
+                    })
+                // $('.instructions').css({'display': 'none'})
+
+                $('.instruction-close').css({
+                    'top': '2.5rem'
+                });
+
+                $('.right-header')
+                    .css({
+                        'transform': 'translateY(0)'
+                    })
+
+
+
+            } else {
+
+                $(".instructions").animate({
+                    "width": "4rem"
+                }, "400");
+
+                $('.right-header')
+                    .css({
+                        'transform': 'translateY(-41rem)'
+                    })
+            }
+        })
+
+        //STYLING ON CLICK
+        $("#name-submit").on("click", function () {
+
+            if (userName === "") {
+                $('.popup-container').append(`<p>Please Enter Your Name</p>`)
+
+                $('.no-name-popup').animate({
+                    "opacity": "1"
                 })
-            // $('.instructions').css({'display': 'none'})
+            } else {
+                $("main").css({
+                    "z-index": "18"
+                });
 
-            $('.instruction-close').css({
-                'top': '2.5rem'
-            });
+                $(".question-block").animate({
+                    "opacity": "1"
+                }, 700);
 
-            $('.right-header')
-                .css({
-                    'transform': 'translateY(0)'
-                })
+                if ($(window).width() > 550) {
 
-
-
-        } else {
-
-            $(".instructions").animate({
-                "width": "4rem"
-            }, "400");
-
-            $('.right-header')
-                .css({
-                    'transform': 'translateY(-41rem)'
-                })
-        }
-    })
-
-    //STYLING ON CLICK
-    $("#name-submit").on("click", function () {
-
-        if (userName === "") {
-            $('.popup-container').append(`<p>Please Enter Your Name</p>`)
-
-            $('.no-name-popup').animate({"opacity" : "1"})
-        } else {
-            $("main").css({
-                "z-index": "18"
-            });
-
-            $(".question-block").animate({
-                "opacity": "1"
-            }, 700);
-
-            if ($(window).width() > 550) {
-
-                $(".right-header").animate({
-                    "height": "20vh"
-                }, "fast").empty().append(`<div class="good-luck-message">
+                    $(".right-header").animate({
+                            "height": "20vh"
+                        }, "fast").empty().append(`<div class="good-luck-message">
                          <h4>Thanks, ${userName}! Good Luck!</h4>
                         </div>`)
-                    .css({
-                        "padding": "14vh 0 0 43%"
-                    });
+                        .css({
+                            "padding": "14vh 0 0 43%"
+                        });
 
-                // } else if ($(window).width() > 400) {
-                //     $('.question-block')
-                //         .animate({
-                //             'opacity': '1'
-                //         }, 500)
-                //         .css({
-                //             'transform': 'translateY(12rem)'
-                //         });
-            } else {
-                $('.right-header')
-                    .animate({
-                        'height': '14vh'
-                    }, 200)
-                    .css({
-                        'padding': '8vh 0px 0px 28%'
-                    }).empty().append(`<div class="good-luck-message">
+                    // } else if ($(window).width() > 400) {
+                    //     $('.question-block')
+                    //         .animate({
+                    //             'opacity': '1'
+                    //         }, 500)
+                    //         .css({
+                    //             'transform': 'translateY(12rem)'
+                    //         });
+                } else {
+                    $('.right-header')
+                        .animate({
+                            'height': '14vh'
+                        }, 200)
+                        .css({
+                            'padding': '8vh 0px 0px 28%'
+                        }).empty().append(`<div class="good-luck-message">
                              <h4>Thanks, ${userName}! Good Luck!</h4>
                             </div>`);
+                }
+                $('.question-block')
+                    .animate({
+                        'opacity': '1'
+                    }, 500);
             }
-            $('.question-block')
-                .animate({
-                    'opacity': '1'
-                }, 500);
-        }
 
-    }
-     )     // JAVASCRIPT MEDIA QUERIES
+        }) // JAVASCRIPT MEDIA QUERIES
 
         if ($(window).width() < 400) {
 

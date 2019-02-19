@@ -1,50 +1,49 @@
 .possible-answers {
     width: 50%;
-    @include display-flex(row,flex-start,flex-start);
+    @include display-flex(row, flex-start, flex-start);
     flex-wrap: wrap;
-    text-align:center;
+    text-align: center;
 }
 
-.possible-answers > button {
+.possible-answers>button {
     height: 100px;
     width: calc(50% - 40px);
     border: 1px solid $primary-font-color;
-    padding:20px;
+    padding: 20px;
     margin: 20px;
-    color:$secondary-font-color;
-    background-color:darken($primary-color, 5%);
+    color: $secondary-font-color;
+    background-color: darken($primary-color, 5%);
 
-     &:focus-within{
-         background-color:$primary-color;
-     }
+    &:focus-within {
+        background-color: $primary-color;
+    }
 
 }
 
-.answer-background{
+.answer-background {
     transition: .2s all linear;
 
     &:hover,
-    &:focus-within
-    {
-        
-        background-color:$primary-font-color;
+    &:focus-within {
+
+        background-color: $primary-font-color;
         border: 1px solid $secondary-color;
-        
+
     }
 }
 
 .hide-me {
-    display:none;
+    display: none;
 }
 
 .block-me {
-    display:block;
- 
+    display: block;
+
 }
 
-.generation {
+.next-level-gen{
     border: none;
-    background-color:$primary-color;
-    color:$secondary-color;
+    background-color: $primary-color;
+    color: $secondary-color;
     font-family: $primary-font;
 }

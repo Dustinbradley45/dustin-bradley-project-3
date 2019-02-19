@@ -434,7 +434,8 @@ main {
     font-size: 1.3rem;
     font-family: "karla", sans-serif;
     padding: 0 2rem; }
-  .question-block h3, .question-block li {
+  .question-block h3,
+  .question-block li {
     font-family: "karla", sans-serif;
     font-size: 1.2rem;
     letter-spacing: 1.1px;

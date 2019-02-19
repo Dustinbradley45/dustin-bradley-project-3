@@ -238,7 +238,7 @@ const gameVal = {
         },
         song = {
             id: 7,
-            title:'Karma Police',
+            title: "Karma Police",
             artist: "Radiohead",
             album: "OK Computer",
             year: 1997,
@@ -443,7 +443,7 @@ const gameVal = {
         },
         song = {
             id: 10,
-            title: '15 Steps',
+            title: "15 Steps",
             artist: "Radiohead",
             album: "In Rainbows",
             year: 2007,
@@ -459,16 +459,22 @@ const gameVal = {
 }
 
 
+// MVP: PICK A DECADE AND PLAY THROUGH WITH A SCORE AT THE END. 
+//STRETCH: DID NOT GET TO THE PLAY AGAIN FUNCTION
+
 //START GAME NAMESPACE. THROW ALL METHODS ONTO myGame. 
 const myGame = {
 
 }
 
+//BEGINNING USER SCORE
 myGame.startScore = 0;
 
+// ADDS ONE TO THE START SCORE. CALLED WHEN PROGRAM CHECKS FOR CORRECT ANSWERS
 myGame.scoreCounter = () => {
     myGame.startScore++;
 
+    //REMOVES CURRENT SCORE AND APPENDS NEW
     $(".counter").empty();
 
     $(".counter").append(`<p class="number-add">${myGame.startScore}</p>`);
@@ -495,17 +501,19 @@ myGame.appendAnswers = () => {
 
     $(".answer-box-4").append(`<p>${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].otherAnswers[3]}</p>`);
 
-    // $(".next-round").fadeOut("200");
-
 };
 
+
+//FUNCTION CHECKS TO SEE IF USER ANSWER IS THE SAME AS IN THE ARRAY
 myGame.userAnswer = function () {
     $(".answer-block").off().click(function () {
 
         if ($(this).find("p")[0].innerHTML == gameVal[myGame.decadeOfChoice][gameVal.roundCounter].artist) {
 
+            //ADD TO SCORECOUNTER IF CORRECT
             myGame.scoreCounter();
 
+            //SHOW SONG INFO
             $(".question-block").empty().append(`<h3>Correct!</h3>
             <ul>
                 <li>Song: ${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].title} </li>
@@ -514,18 +522,17 @@ myGame.userAnswer = function () {
                 <li>Year: ${gameVal[myGame.decadeOfChoice][gameVal.roundCounter].year}</li>
             </ul>`);
 
+            //HIDE ANSWER BLOCK SO THAT USER CANNOT PICK TWICE
             $(".answer-block").hide();
 
-            $(".next-question button").show("200");
-
+            //SHOW NEXT QUESTION BUTTON WHICH IS THE NEXT EVENT TRIGGER
             $(".next-question").html(`<button class="next-round" tabindex=0>Next Round</button>`);
 
+            $(".next-question button").show("200");
 
             myGame.endGame();
 
         } else {
-
-            //IF WRONG GO RED
 
             $(".answer-block").hide();
 
@@ -547,6 +554,7 @@ myGame.userAnswer = function () {
     })
 };
 
+//REMOVES ALL ANSWERS SO THAT NEXT ROUND CAN REAPPEND
 myGame.gameReset = () => {
 
     $(".answer-block").children("p")
@@ -565,7 +573,7 @@ $("#name-submit").on("click", function (event) {
 
 )
 
-
+// CALLED PER USERANSWER. USED TO CHECK TO SEE WHEN THE ROUND COUNTER REACHES TEN; SAME AS INDEX
 myGame.endGame = () => {
 
     if (gameVal[myGame.decadeOfChoice][gameVal.roundCounter].id == 10) {
@@ -579,7 +587,7 @@ myGame.endGame = () => {
         }, "slow").css({
             "padding": "19vh 0 0 0"
         }).css({
-            'z-index': '19'
+            "z-index": "19"
         }).empty().append(`
         <div class="user-score">
             <h3> Great job ${userName}! You scored ${myGame.startScore}/10.</h3>
@@ -602,6 +610,7 @@ myGame.endGame = () => {
     }
 }
 
+//TRY AGAIN
 myGame.tryAgain = () => {
 
     myGame.roundCounter = 0;
@@ -620,38 +629,38 @@ myGame.tryAgain = () => {
         $(".answer-block").fadeIn("750");
 
         if ($(window).width() < 550) {
-            $('.generation').on('click', function () {
+            $(".generation").on("click", function () {
 
 
-                $('.right-header').css({
-                    'height': '0'
+                $(".right-header").css({
+                    "height": "0"
                 }).css({
-                    'padding': '0'
+                    "padding": "0"
                 });
 
                 $(".question-block").animate({
                         "height": "30vh"
-                    }, 'fast')
+                    }, "fast")
                     .css({
                         "padding": "5px"
                     })
                     .css({
-                        'transform': 'translateY(16vh)'
+                        "transform": "translateY(16vh)"
                     })
                     .css({
-                        'display': 'flex'
+                        "display": "flex"
                     })
                     .css({
-                        'flex-direction': 'column'
+                        "flex-direction": "column"
                     })
                     .css({
-                        'justify-content': 'center'
+                        "justify-content": "center"
                     });
             })
 
         } else {
             $(".question-block").css({
-                'translateY': '0'
+                "translateY": "0"
             })
 
         }
@@ -703,14 +712,17 @@ myGame.nextRound = () => {
     })
 }
 
+//THIS IS ONCE USER HAS PLAYED ONCE AND WANTS TO GO AGAIN> DID NOT FINISH.
 myGame.newGeneration = () => {
-    $('.user-score').on('click', '.next-level-gen', function () {
-        console.log('cat')
+    $(".user-score").on("click", ".next-level-gen", function () {
+
         $("main").animate({
             "opacity": "1"
-        }, "fast").css({ 'z-index': '19' });
-        
-        $('.user-score').hide();
+        }, "fast").css({
+            "z-index": "19"
+        });
+
+        $(".user-score").hide();
 
         let chosenGeneration = $(this).attr("id")
         myGame.decadeOfChoice = [chosenGeneration];
@@ -720,7 +732,7 @@ myGame.newGeneration = () => {
     })
 }
 
-
+// INIT FUNCTION
 myGame.gameInit = () => {
 
     $(".generation").on("click", function () {
@@ -728,15 +740,16 @@ myGame.gameInit = () => {
         myGame.decadeOfChoice = [chosenGeneration];
 
         if ($(window).width() < 550) {
-              $('.question-block')
-                  .css({
-                      'height': '26%'
-                  }).css({'padding': '2rem'});
+            $(".question-block")
+                .css({
+                    "height": "26%"
+                }).css({
+                    "padding": "2rem"
+                });
         } else {
             $(".question-block").css("height", "36vh").css("padding", "5px");
-            
-         }
 
+        }
 
         myGame.startQuestions();
 
@@ -753,43 +766,43 @@ $(function () {
         myGame.gameInit();
 
 
-
-
+    
         //STYLING ON FIRST INSTRUCTION BUTTON CLICK
         $(".instruction-slide").on("click", function () {
 
             $(".instruction-box").empty()
 
-            //WINDOW SPECIFIC SIZE QUERIES
             if ($(window).width() > 550) {
 
                 $(".icon-box").append(`
-            <span>
-                <div class="box-1"></div>
-                <div class="box-2"></div>
-            </span>
-            `).addClass("instruction-close").animate({
+                <span>
+                    <div class="box-1"></div>
+                    <div class="box-2"></div>
+                </span>
+            `)
+                    .addClass("instruction-close")
+                    .animate({
                     "opacity": "1"
                 }, "slow");
             }
             if ($(window).width() < 550) {
 
 
-                $('.instructions').animate({
-                        'width': '0 '
+                $(".instructions").animate({
+                        "width": "0"
                     })
                     .animate({
-                        'height': '0'
+                        "height": "0"
                     })
-                // $('.instructions').css({'display': 'none'})
 
-                $('.instruction-close').css({
-                    'top': '2.5rem'
+
+                $(".instruction-close").css({
+                    "top": "2.5rem"
                 });
 
-                $('.right-header')
+                $(".right-header")
                     .css({
-                        'transform': 'translateY(0)'
+                        "transform": "translateY(0)"
                     })
 
 
@@ -800,20 +813,22 @@ $(function () {
                     "width": "4rem"
                 }, "400");
 
-                $('.right-header')
+                $(".right-header")
                     .css({
-                        'transform': 'translateY(-41rem)'
+                        "transform": "translateY(-41rem)"
                     })
             }
         })
 
-        //STYLING ON CLICK
+
+    
+        //STYLING ON CLICK OF FORM
         $("#name-submit").on("click", function () {
 
             if (userName === "") {
-                $('.popup-container').append(`<p>Please Enter Your Name</p>`)
+                $(".popup-container").append(`<p>Please Enter Your Name</p>`)
 
-                $('.no-name-popup').animate({
+                $(".no-name-popup").animate({
                     "opacity": "1"
                 })
             } else {
@@ -836,52 +851,47 @@ $(function () {
                             "padding": "14vh 0 0 43%"
                         });
 
-                    // } else if ($(window).width() > 400) {
-                    //     $('.question-block')
-                    //         .animate({
-                    //             'opacity': '1'
-                    //         }, 500)
-                    //         .css({
-                    //             'transform': 'translateY(12rem)'
-                    //         });
                 } else {
-                    $('.right-header')
+                    $(".right-header")
                         .animate({
-                            'height': '14vh'
+                            "height": "14vh"
                         }, 200)
                         .css({
-                            'padding': '8vh 0px 0px 28%'
+                            "padding": "8vh 0px 0px 28%"
                         }).empty().append(`<div class="good-luck-message">
                              <h4>Thanks, ${userName}! Good Luck!</h4>
                             </div>`);
                 }
-                $('.question-block')
+                $(".question-block")
                     .animate({
-                        'opacity': '1'
+                        "opacity": "1"
                     }, 500);
             }
+        })
 
-        }) // JAVASCRIPT MEDIA QUERIES
+
+    
+         // JAVASCRIPT MEDIA QUERIES
 
         if ($(window).width() < 400) {
 
-            $('.generation').on('click', function () {
-                $('.question-block')
+            $(".generation").on("click", function () {
+                $(".question-block")
                     .css({
-                        'margin-top': '15%'
+                        "margin-top": "15%"
                     });
 
-                $('.instructions')
+                $(".instructions")
                     .animate({
-                        'height': '0'
-                    }, 'slow');
+                        "height": "0"
+                    }, "slow");
 
-                $('.right-header')
+                $(".right-header")
                     .animate({
-                        'height': '14vh'
-                    }, 'slow')
+                        "height": "14vh"
+                    }, "slow")
                     .css({
-                        'padding': '8vh 0px 0px 28%'
+                        "padding": "8vh 0px 0px 28%"
                     });
 
             })

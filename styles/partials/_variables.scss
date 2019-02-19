@@ -8,14 +8,6 @@ $secondary-font-color: #f1faff;
 
 //FONTS
 
-//  STANDARD @IMPORT 
-
-// font-family: "Inconsolata",
-// monospace;
-
-// font-family: "Karla",
-// sans-serif;
-
 $secondary-font: "Inconsolata",
 monospace;
 $primary-font: "karla",
@@ -39,11 +31,3 @@ $sm-tablet: "only screen and (max-width: 800px)";
 $lg-phone: "only screen and (max-width: 700px)";
 $med-phone: "only screen and (max-width: 550px)";
 $sm-phone: "only screen and (max-width: 400px)";
-
-
-
-// $information-phone: "only screen and (max-width : 320px)";
-
-// @media #{$information-phone} {
-//     background: red;
-// }

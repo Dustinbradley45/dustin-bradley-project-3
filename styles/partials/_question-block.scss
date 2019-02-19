@@ -2,22 +2,23 @@
     width: 50%;
     height: 53vh;
     border: 2px solid $primary-font-color;
-    background-color:$secondary-color;
-    margin-bottom:20px;
+    background-color: $secondary-color;
+    margin-bottom: 20px;
     color: $primary-font-color;
     text-align: center;
-    opacity:0;
-    
+    opacity: 0;
+
     .lyrics {
-        font-size:1.3rem;
+        font-size: 1.3rem;
         font-family: $primary-font;
-        padding:0 2rem;
+        padding: 0 2rem;
 
     }
 
-    h3, li {
-        font-family:$primary-font;
-        font-size: 1.2rem; 
+    h3,
+    li {
+        font-family: $primary-font;
+        font-size: 1.2rem;
         letter-spacing: 1.1px;
         line-height: 1.5rem;
 
@@ -26,7 +27,7 @@
 
 .question-container {
     @include display-flex(column, center, center);
-    margin-top:10%;
+    margin-top: 10%;
 
     .generation {
         width: 80%;
@@ -34,29 +35,19 @@
         margin: 20px;
         border: 2px solid $primary-font-color;
         transition: all .4s linear;
-        
-        color:$secondary-font-color;
-        
+
+        color: $secondary-font-color;
+
         background-color: $primary-color;
-        
+
         &:hover,
         &:focus-within {
             border: 2px solid $secondary-font-color;
-            background-color:$primary-font-color;
-          
+            background-color: $primary-font-color;
 
-        
+
+
         }
 
     }
 }
-
-// .next-level-gen {
-
-//     &:focus-within,
-//     &:hover {
-//         background-color: darken($secondary-color,5%);
-//     }
-// }
-
-

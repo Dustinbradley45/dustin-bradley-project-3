@@ -14,7 +14,7 @@ header {
 
 .header-inside {
     @include display-flex(row, space-between, center);
-           margin: 0 7rem;
+           margin: 1.1rem 7rem;
 }
 
 #title{

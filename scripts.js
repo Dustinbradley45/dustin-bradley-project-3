@@ -153,7 +153,7 @@ const gameVal = {
             artist: "Beastie Boys",
             album: "Ill Communication",
             year: 1994,
-            lyrics: "Said, son, you\"d better listen / Stuck in your ass is an electrician",
+            lyrics: "Said, son, you\'d better listen / Stuck in your ass is an electrician",
             otherAnswers: [
                 "Ice Cube",
                 "Fatboy Slim",
@@ -200,10 +200,10 @@ const gameVal = {
             year: 1997,
             lyrics: "Plant a seed, plant a flower, plant a rose / You can plant any one of those / Keep planting to find out which one grows/ It\"s a secret no one knows",
             otherAnswers: [
-                "",
-                "",
-                "",
-                "",
+                "testing1",
+                "testing2",
+                "testing3",
+                "testing4",
 
             ]
 
@@ -482,7 +482,6 @@ myGame.appendAnswers = () => {
 
 myGame.userAnswer = function () {
     $(".answer-block").off().click(function () {
-        console.log("answer block clicked")
 
         if ($(this).find("p")[0].innerHTML == gameVal[myGame.decadeOfChoice][gameVal.roundCounter].artist) {
 
@@ -525,8 +524,6 @@ myGame.userAnswer = function () {
     })
 };
 
-
-
 myGame.gameReset = () => {
 
     $(".answer-block").children("p")
@@ -556,6 +553,8 @@ myGame.endGame = () => {
             "height": "100vh"
         }, "slow").css({
             "padding": "19vh 0 0 0"
+        }).css({
+            'z-index': '19'
         }).empty().append(`
         <div class="user-score">
             <h3> Great job ${userName}! You scored ${myGame.startScore}/10.</h3>
@@ -591,8 +590,46 @@ myGame.tryAgain = () => {
         $(".answer-block").children("p")
 
             .remove();
+        
 
         $(".answer-block").fadeIn("750");
+
+        if ($(window).width() < 550) {
+            $('.generation').on('click', function () {
+
+              
+                $('.right-header').css({
+                    'height': '0'
+                }).css({
+                    'padding': '0'
+                });
+
+                $(".question-block").animate({
+                        "height": "30vh"
+                    }, 'fast')
+                    .css({
+                        "padding": "5px"
+                    })
+                    .css({
+                        'transform': 'translateY(16vh)'
+                    })
+                    .css({
+                        'display': 'flex'
+                    })
+                    .css({
+                        'flex-direction': 'column'
+                    })
+                    .css({
+                        'justify-content': 'center'
+                    });
+            })
+
+        } else {
+            $(".question-block").css({
+                'translateY': '0'
+            })
+
+        }
     })
 
     $(".question-block").css("height", "50vh").css("padding", "5px");
@@ -642,8 +679,18 @@ myGame.nextRound = () => {
 }
 
 myGame.newGeneration = () => {
-    $('.user-score').on('click', '.next-level-gen', function () { 
-        mygame.gameInit();
+    $('.user-score').on('click', '.next-level-gen', function () {
+        $('.user-score').hide();
+
+        let chosenGeneration = $(this).attr("id")
+        myGame.decadeOfChoice = [chosenGeneration];
+
+        gameVal.roundCounter = 0;
+        console.log(gameVal.roundCounter);
+
+        $("main").animate({
+            "opacity": "1"
+        }, "fast");
     })
 }
 
@@ -651,17 +698,18 @@ myGame.newGeneration = () => {
 myGame.gameInit = () => {
 
     $(".generation").on("click", function () {
-        const chosenGeneration = $(this).attr("id")
+        let chosenGeneration = $(this).attr("id")
         myGame.decadeOfChoice = [chosenGeneration];
 
+
         $(".question-block").css("height", "36vh").css("padding", "5px");
+
 
         myGame.startQuestions();
 
         myGame.nextRound();
 
         myGame.newGeneration();
-
     })
 
 }
@@ -669,79 +717,138 @@ myGame.gameInit = () => {
 
 //MAIN FUNCTION WITH DOC READY
 $(function () {
-    myGame.gameInit();
-
-    //STYLING ON CLICK
-    $(".instruction-slide").on("click", function () {
-        $(".instructions").animate({
-            "width": "4rem"
-        }, "400");
-
-        $(".instruction-box").empty()
-
-        $(".icon-box").append(`
-        <div class="box-1"></div>
-        <div class="box-2"></div>
-        </span>
-        `).addClass("instruction-close").animate({
-            "opacity": "1"
-        }, "slow");
+        myGame.gameInit();
 
 
-    });
 
 
-    //STYLING ON CLICK
-    $("#name-submit").on("click", function () {
+        //STYLING ON FIRST INSTRUCTION BUTTON CLICK
+        $(".instruction-slide").on("click", function () {
 
-        $(".right-header").animate({
-            "height": "20vh"
-        }, "fast").empty().append(`<div class="good-luck-message">
-            <h4>Thanks, ${userName}! Good Luck!</h4>
-        </div>`)
-            .css({
-                "padding": "14vh 0 0 43%"
+            $(".instruction-box").empty()
+
+            //WINDOW SPECIFIC SIZE QUERIES
+            if ($(window).width()> 550) {
+
+                $(".icon-box").append(`
+            <span>
+                <div class="box-1"></div>
+                <div class="box-2"></div>
+            </span>
+            `).addClass("instruction-close").animate({
+                    "opacity": "1"
+                }, "slow");
+            }
+            if ($(window).width()< 550) {
+
+
+                $('.instructions').animate({
+                        'width': '0 '
+                    })
+                    .animate({
+                        'height': '0'
+                    })
+                // $('.instructions').css({'display': 'none'})
+
+                $('.instruction-close').css({
+                    'top': '2.5rem'
+                });
+
+                $('.right-header')
+                    .css({
+                        'transform': 'translateY(0)'
+                    })
+
+
+
+            } else {
+
+                $(".instructions").animate({
+                    "width": "4rem"
+                }, "400");
+
+                $('.right-header')
+                    .css({
+                        'transform': 'translateY(-41rem)'
+                    })
+            }
+        })
+
+        //STYLING ON CLICK
+        $("#name-submit").on("click", function () {
+
+            $("main").css({
+                "z-index": "18"
             });
 
-        $("main").css({
-            "z-index": "50"
-        });
+            $(".question-block").animate({
+                "opacity": "1"
+            }, 700);
 
-        $(".question-block").animate({
-            "opacity": "1"
-        }, 700);
-    });
 
-// JAVASCRIPT MEDIA QUERIES
-    if (window.matchMedia("(max-width: 550px)").matches) {
-        $('.instruction-slide').on('click', function () {
-            $('.instructions').animate({ 'height': '20vh' });
 
-            $('.instruction-close').css({ 'top': '2.5rem' });
+            if ($(window).width() > 550) {
 
-            $('#name-submit').on('click', function () { 
-                $('.right-header').animate({ 'height': '10vh' }, 200).css({'padding': '4vh 0px 0px 28%'});
+                $(".right-header").animate({
+                        "height": "20vh"
+                    }, "fast").empty().append(`<div class="good-luck-message">
+                         <h4>Thanks, ${userName}! Good Luck!</h4>
+                        </div>`)
+                    .css({
+                        "padding": "14vh 0 0 43%"
+                    });
 
-                $('.question-block').animate({
+            } else if ($(window).width() > 400) {
+                $('.question-block')
+                    .animate({
                         'opacity': '1'
-                }, 500)
+                    }, 500)
+                    .css({
+                        'transform': 'translateY(12rem)'
+                    });
+            } else {
+                $('.right-header')
+                    .animate({
+                        'height': '14vh'
+                    }, 200)
+                    .css({
+                        'padding': '8vh 0px 0px 28%'
+                    }).empty().append(`<div class="good-luck-message">
+                             <h4>Thanks, ${userName}! Good Luck!</h4>
+                            </div>`);
+            }
+            $('.question-block')
+                .animate({
+                    'opacity': '1'
+                }, 500);
+        })
+
+
+        // JAVASCRIPT MEDIA QUERIES
+
+        if ($(window).width() < 400) {
+
+            $('.generation').on('click', function () {
+                $('.question-block')
+                    .css({
+                        'margin-top': '15%'
+                    });
+
+                $('.instructions')
+                    .animate({
+                        'height': '0'
+                    }, 'slow');
+
+                $('.right-header')
+                    .animate({
+                        'height': '14vh'
+                    }, 'slow')
+                    .css({
+                        'padding': '8vh 0px 0px 28%'
+                    });
+
             })
-        });
-
-        $('.generation').on('click', function () { 
-                    // .css({ 'transform': 'translateY(9rem)' });
-            $(".question-block").animate({ "height": "30vh" },'slow').css({ "padding": "5px" }).css({ 'transform': 'translateY(11vh)' }).css({ 'display': 'flex' }).css({ 'flex-direction': 'column' }).css({ 'justify-content': 'center' }); 
-        })
+        }
     }
 
-    if (window.matchMedia("(max-width: 400px)").matches) {
-        $('#name-submit').on('click', function () {
-            // $('.right-header').animate({ 'height': '10vh' }, 200).css({ 'padding': '4vh 0px 0px 28%' });
-
-            $('.question-block').animate({
-                'opacity': '1'
-            }, 500).delay(10000)
-                .css({ 'transform': 'translateY(12rem)' });
-        })
-    }
-})
+)

@@ -54,6 +54,24 @@
     }
 
 }
+.no-name-popup {
+    background-color: rgba($primary-color, .7);
+    color:$secondary-font-color;
+    text-align: center;
+    width: 100%;
+    padding: 1rem;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    opacity: 0;
+    .popup-container {
+        font-size:1rem;
+        font-family: $primary-font;
+    }
+}
+
 
 .good-luck-message {
     font-family:$primary-font;

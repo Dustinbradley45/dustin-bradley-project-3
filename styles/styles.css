@@ -342,6 +342,22 @@ h1 {
       color: #e39e21;
       font-family: "karla", sans-serif; }
 
+.no-name-popup {
+  background-color: rgba(32, 47, 62, 0.7);
+  color: #f1faff;
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0; }
+  .no-name-popup .popup-container {
+    font-size: 1rem;
+    font-family: "karla", sans-serif; }
+
 .good-luck-message {
   font-family: "karla", sans-serif;
   color: #202f3e;

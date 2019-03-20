@@ -8,8 +8,6 @@
 
 
 
-
-
     form {
         @include display-flex(column, center, center);
         margin-top: 25%;
@@ -51,16 +49,18 @@
             text-decoration: none;
             color: $secondary-color;
             font-family: $primary-font;
+            transition: .3s all linear; 
 
             &:hover,
             &:focus-within {
-                border-bottom: 1px solid $secondary-font-color;
-                padding-bottom: 10px;
+                color:white;
+           
             }
         }
     }
 
 }
+
 
 .no-name-popup {
     background-color: rgba($primary-color, .7);
@@ -89,4 +89,5 @@
     position: relative;
     bottom: 2rem;
     right: 3rem;
+    padding-top:1.5rem;
 }

@@ -504,7 +504,7 @@ myGame.appendAnswers = () => {
 };
 
 
-//FUNCTION CHECKS TO SEE IF USER ANSWER IS THE SAME AS IN THE ARRAY
+//FUNCTION CHECKS TO SEE IF USER ANSWER IS THE SAME AS IN THE 
 myGame.userAnswer = function () {
     $(".answer-block").off().click(function () {
 
@@ -591,15 +591,8 @@ myGame.endGame = () => {
         }).empty().append(`
         <div class="user-score">
             <h3> Great job ${userName}! You scored ${myGame.startScore}/10.</h3>
-            <p class="play-again">Play Again?</p>
 
-            <button class= "generation eighties next-level-gen" id="eightiesSongs">80s</button>
-
-            <button class= "generation nineties next-level-gen"
-            id= "ninetiesSongs">90s</button>
-
-            <button class= "generation thousands next-level-gen"
-            id= "thousandsSongs">00s</button>
+         
 
         </div>
         `);

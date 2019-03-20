@@ -84,7 +84,7 @@
 
     .question-block {
         width: 73%;
-        margin: 13% 0 0 12%;
+        margin: 14% 0 0 12%;
     }
 
     .next-question {
@@ -116,7 +116,7 @@
 
     .question-block {
         width: 100%;
-        height: 67vh;
+        height: 44vh;
         margin-left: 0;
         padding: 10px;
         transform: translateY(7rem);
@@ -134,8 +134,12 @@
             top: 4rem;
             margin-left: 0;
             padding: 0;
-            background-color: rgba($primary-color, .9);
+            background-color: rgba($primary-color,1);
         }
+    }
+
+    .main-flex-container {
+        padding-top:2.25rem;
     }
 
 
@@ -144,7 +148,7 @@
         @include display-flex(column, center, center);
         transform: tranlateY(-2rem);
         margin-left: 0;
-        margin-top: 2rem;
+        padding-top: 2rem;
 
         &>button {
             width: 100%;
@@ -181,12 +185,21 @@
         transform: translateY(-4rem);
         margin: 0;
     }
+
+
+}
+
+@media #{$med-phone} {
+    .right-header form {
+        top:7rem;
+    }
 }
 
 @media #{$sm-phone} {
 
     .question-block {
         transform: translateY(7rem);
+        margin-top: 30%;
 
     }
 
@@ -205,6 +218,7 @@
     .right-header {
 
         form {
+         
 
             label {
                 font-size: 1rem;

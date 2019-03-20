@@ -15,8 +15,8 @@
         color: $primary-color;
         letter-spacing: 1.2px;
         text-align: center;
-        background-color: darken(rgba($secondary-color, 0.8), 4%);
-        padding: 3.5rem 0;
+        background-color: darken(rgba($secondary-color, 0.9), 4%);
+        padding: 2.5rem 1rem;
         width: 40%;
         font-family: $primary-font;
 
@@ -29,10 +29,11 @@
         padding: 10px;
         border: none;
         background: none;
+        transition:.3s all linear;
 
         &:hover,
         &:focus {
-            border-bottom: 1px solid $primary-color;
+            color:$primary-color;
 
         }
     }

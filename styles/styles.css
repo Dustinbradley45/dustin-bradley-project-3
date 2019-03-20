@@ -277,6 +277,12 @@ header .header-content {
   z-index: 1000;
 }
 
+.header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header-inside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -294,6 +300,16 @@ header .header-content {
   margin: 1.1rem 7rem;
 }
 
+.header-inside i {
+  font-size: 1.5rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #e39e21;
+  -webkit-animation: spin linear infinite 1s;
+          animation: spin linear infinite 1s;
+}
+
 #title {
   color: black;
   font-size: 40px;
@@ -305,6 +321,7 @@ h1 {
   color: #e39e21;
   letter-spacing: 1.5px;
   margin: 0 auto;
+  margin-left: 1rem;
 }
 
 .counter {
@@ -313,6 +330,28 @@ h1 {
   width: 40%;
   color: #e39e21;
   font-size: 1.4rem;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+            transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
 }
 
 .instructions {

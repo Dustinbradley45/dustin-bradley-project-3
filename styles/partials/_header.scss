@@ -11,9 +11,20 @@ header {
     }
 }
 
+.header-title {
+    display:flex;
+}
+
 .header-inside {
     @include display-flex(row, space-between, center);
     margin: 1.1rem 7rem;
+
+    i {
+        font-size: 1.5rem;
+        align-self: center;
+        color:$secondary-color;
+        animation: spin linear infinite 1s 
+    }
 }
 
 #title {
@@ -27,6 +38,7 @@ h1 {
     color: $secondary-color;
     letter-spacing: 1.5px;
     margin: 0 auto;
+    margin-left:1rem;
 
 }
 
@@ -36,4 +48,16 @@ h1 {
     width: 40%;
     color: $secondary-color;
     font-size: 1.4rem;
+}
+
+@keyframes spin {
+    0% {
+        transform:rotateZ(0deg)
+    }
+    100% {
+        transform: rotateZ(360deg)
+    }
+    // 100% {
+    //     transform: rotateZ(0deg)
+    // }
 }
